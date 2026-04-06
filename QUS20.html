@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Dimensional Arrays</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Write a C++ program to count the number of even and odd elements in a given array.</h2>
+<pre><h3>
+#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+int arr[20],n,i;
+int evenCount=0,oddCount=0;
+cout&lt;&lt;&quot;Enter the size of an array:&quot;;
+cin&gt;&gt;n;
+cout&lt;&lt;&quot;Enter the elements:&quot;;
+for(i=0;i&lt;n;i++)
+{
+cin&gt;&gt;arr[i];
+}
+for(i=0;i&lt;n;i++)
+{
+if(arr[i]%2==0)
+evenCount++;
+else
+oddCount++;
+}
+cout&lt;&lt;&quot;Number of even elements:&quot;&lt;&lt;evenCount&lt;&lt;endl;
+cout&lt;&lt;&quot;Number of odd elements:&quot;&lt;&lt;oddCount&lt;&lt;endl;
+return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter the size of an array:5
+Enter the element:9
+8
+7
+6
+5
+Number of even elements:3
+Number of odd elements:2
+</h3></pre>
+</section>
+<a href="../array.html">Back to Topic</a>
+</body>
+</html>

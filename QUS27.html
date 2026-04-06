@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Dimensional Arrays</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Write a C++ program to segregate all 0s on left side and all 1s on right side of a given array of 0s and 1s.</h2>
+<pre><h3>
+#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+int n,i,arr[20],left,right;
+cout&lt;&lt;&quot;Enter the size of an array:&quot;;
+cin&gt;&gt;n;
+cout&lt;&lt;&quot;Enter &quot;&lt;&lt;n&lt;&lt;&quot; elements (0s and 1s only):&quot;;
+for(i=0;i&lt;n;i++)
+{
+cin&gt;&gt;arr[i];
+}
+left=0,right=n-1;
+while(left&lt;right)
+{
+while(arr[left]==0&amp;&amp;left&lt;right)
+left++;
+while(arr[right]==1&amp;&amp;left&lt;right)
+right--;
+if(left&lt;right)
+{
+int temp=arr[left];
+arr[left]=arr[right];
+arr[right]=temp;
+left++;
+right--;
+}
+}
+cout&lt;&lt;&quot;Array after segregation&quot;&lt;&lt;endl;
+for(i=0;i&lt;n;i++)
+{
+cout&lt;&lt;arr[i]&lt;&lt;&quot; &quot;;
+}
+return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter the size of an array:8
+Enter 8 elements (0s and 1s only):0
+1
+1
+0
+0
+1
+0
+1
+Array after segregation
+0 0 0 0 1 1 1 1
+</h3></pre>
+</section>
+<a href="../array.html">Back to Topic</a>
+</body>
+</html>

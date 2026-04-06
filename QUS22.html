@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Dimensional Arrays</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Write a C++ program to calculate the average value of array elements.</h2>
+<pre><h3>
+#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+int arr[20],n,i,sum;
+float average;
+cout&lt;&lt;&quot;Enter the size of an array:&quot;;
+cin&gt;&gt;n;
+cout&lt;&lt;&quot;Enter the elements:&quot;;
+for(i=0;i&lt;n;i++)
+{
+cin&gt;&gt;arr[i];
+}
+sum=arr[0]+arr[1]+arr[2]+arr[3]+arr[4];
+average=sum/n;
+cout&lt;&lt;&quot;Sum=&quot;&lt;&lt;sum&lt;&lt;endl;
+cout&lt;&lt;&quot;Average of array elements:&quot;&lt;&lt;average&lt;&lt;endl;
+return 0;
+}
+
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter the size of an array:5
+Enter the element:9
+8
+7
+6
+5
+Sum=35
+Average of array elements:7
+</h3></pre>
+</section>
+<a href="../array.html">Back to Topic</a>
+</body>
+</html>

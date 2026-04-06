@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Dimensional Arrays</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Write a C++ program to find the common elements between two arrays.</h2>
+<pre><h3>
+#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+int arr1[20],arr2[20],arr,n1,n2,i,j;
+cout&lt;&lt;&quot;Enter the first size of an array:&quot;;
+cin&gt;&gt;n1;
+cout&lt;&lt;&quot;Enter the elements:&quot;;
+for(i=0;i&lt;n1;i++)
+{
+cin&gt;&gt;arr1[i];
+}
+cout&lt;&lt;&quot;Enter the second size of an array:&quot;;
+cin&gt;&gt;n2;
+cout&lt;&lt;&quot;Enter the elements:&quot;;
+for(i=0;i&lt;n2;i++)
+{
+cin&gt;&gt;arr2[i];
+}
+cout&lt;&lt;&quot;Common elements are:&quot;;
+for(i=0;i&lt;n1;i++)
+{
+for(j=0;j&lt;n2;j++)
+{
+if(arr1[i]==arr2[j])
+{
+cout&lt;&lt;arr1[i]&lt;&lt; &quot; &quot;;
+break;
+}
+}
+}
+return 0;
+}
+
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter the first size of an array:3
+Enter the element:1
+2
+3
+Enter the second size of an array:3
+Enter the element:2
+3
+4
+Common elements are:2 3
+</h3></pre>
+</section>
+<a href="../array.html">Back to Topic</a>
+</body>
+</html>

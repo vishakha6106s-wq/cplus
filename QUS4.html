@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Dimensional Arrays</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Program to print the duplicate elements of an array.</h2>
+<pre><h3>
+#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+int arr[50],n,i,j;
+cout&lt;&lt;&quot;Enter number of elements:&quot;;
+cin&gt;&gt;n;
+cout&lt;&lt;&quot;Enter elements:&quot;;
+for(i=0;i&lt;n;i++)
+{
+cin&gt;&gt;arr[i];
+}
+cout&lt;&lt;&quot;Duplicate elements are:&quot;;
+for(i=0;i&lt;n;i++)
+{
+for(j=i+1;j&lt;n;j++)
+{
+if(arr[i]==arr[j])
+{
+cout&lt;&lt;arr[j]&lt;&lt;&quot; &quot;;
+break;
+}
+}
+}
+return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter number of elements:6
+Enter elements:1
+2
+5
+2
+3
+1
+Duplicate elements are:1 2
+</h3></pre>
+</section>
+<a href="../array.html">Back to Topic</a>
+</body>
+</html>

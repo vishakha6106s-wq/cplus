@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Dimensional Arrays</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Write a C++ program to print all unique element in an array.</h2>
+<pre><h3>
+#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+int n,i,arr[20],j,count;
+cout&lt;&lt;&quot;Enter the size of an array:&quot;;
+cin&gt;&gt;n;
+cout&lt;&lt;&quot;Enter the elements:&quot;;
+for(i=0;i&lt;n;i++)
+{
+cin&gt;&gt;arr[i];
+}
+cout&lt;&lt;&quot;Unique elements in the array are:&quot;&lt;&lt;endl;
+for(i=0;i&lt;n;i++)
+{
+count=0;
+}
+for(j=0;j&lt;n;j++)
+{
+if(arr[i]==arr[j])
+{
+count++;
+}
+}
+if(count==1)
+{
+cout&lt;&lt;arr[i]&lt;&lt;&quot; &quot;;
+}
+return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter the size of an array:6
+Enter the elements:4
+5
+4
+6
+7
+5
+Unique elements are:
+6 7
+</h3></pre>
+</section>
+<a href="../array.html">Back to Topic</a>
+</body>
+</html>

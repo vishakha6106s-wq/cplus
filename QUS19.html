@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Dimensional Arrays</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Write a C++ program to swap the first and last elements of an array and create a new array.</h2>
+<pre><h3>
+#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+int arr[20],newArr[50],n,i;
+cout&lt;&lt;&quot;Enter the size of an array:&quot;;
+cin&gt;&gt;n;
+cout&lt;&lt;&quot;Enter the elements:&quot;;
+for(i=0;i&lt;n;i++)
+{
+cin&gt;&gt;arr[i];
+}
+for(i=0;i&lt;n;i++)
+{
+newArr[i]=arr[i];
+}
+if(n&gt;1)
+{
+int temp=newArr[0];
+newArr[0]=newArr[n-1];
+newArr[n-1]=temp;
+}
+cout&lt;&lt;&quot;New Array after swapping first and last elements:&quot;;
+for(i=0;i&lt;n;i++)
+{
+cout&lt;&lt;newArr[i]&lt;&lt;&quot; &quot;;
+}
+return 0;
+}
+
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter the size of an array:5
+Enter the element:10
+20
+30
+40
+50
+New Array after swapping first and last elements:50 20 30 40 10
+</h3></pre>
+</section>
+<a href="../array.html">Back to Topic</a>
+</body>
+</html>

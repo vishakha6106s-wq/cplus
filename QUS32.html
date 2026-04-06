@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Dimensional Arrays</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Enter an array from the user and print the number which is positive?</h2>
+<pre><h3>
+#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+int a[20],n,i;
+cout&lt;&lt;&quot;Enter the size of an array:&quot;;
+cin&gt;&gt;n;
+cout&lt;&lt;&quot;Enter the elements:&quot;&lt;&lt;endl;
+for(i=0;i&lt;n;i++)
+{
+cin&gt;&gt;a[i];
+}
+cout&lt;&lt;&quot;Positive numbers&quot;&lt;&lt;endl;
+for(i=0;i&lt;n;i++)
+{
+if(a[i]&gt;=0)
+{
+cout&lt;&lt;a[i]&lt;&lt;endl;
+}
+}
+return 0;
+}
+
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter the size of an array:6
+Enter the elements:2
+4
+6
+-1
+9
+-3
+Positive numbers
+2 4 6 9
+</h3></pre>
+</section>
+<a href="../array.html">Back to Topic</a>
+</body>
+</html>

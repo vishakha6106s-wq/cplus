@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Dimensional Arrays</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Write a C++ program to test if an array contains a specific value.</h2>
+<pre><h3>
+#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+int arr[20],n,i,value;
+int found=0;
+cout&lt;&lt;&quot;Enter the size of an array:&quot;;
+cin&gt;&gt;n;
+cout&lt;&lt;&quot;Enter the elements:&quot;;
+for(i=0;i&lt;n;i++)
+{
+cin&gt;&gt;arr[i];
+}
+cout&lt;&lt;&quot;Enter value to search:&quot;;
+cin&gt;&gt;value;
+for(i=0;i&lt;n;i++)
+{
+if(arr[i]==value)
+{
+found=1;
+break;
+}
+}
+if(found)
+cout&lt;&lt;&quot;Array contains the value:&quot;&lt;&lt;value&lt;&lt;endl;
+else
+cout&lt;&lt;&quot;Array does not contains the value&quot;&lt;&lt;value&lt;&lt;endl;
+return 0;
+}
+
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter the size of an array:5
+Enter the element:10
+20
+30
+40
+50
+Enter value to search:30
+Array contains the value:30
+	OR
+Enter value to search:90
+Array does not contains the value
+</h3></pre>
+</section>
+<a href="../array.html">Back to Topic</a>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Dimensional Arrays</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Write a C++ program to cyclically rotate a given array clockwise by one.</h2>
+<pre><h3>
+#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+int n,i,arr[20],last;
+cout&lt;&lt;&quot;Enter the size of an array:&quot;;
+cin&gt;&gt;n;
+cout&lt;&lt;&quot;Enter the elements:&quot;;
+for(i=0;i&lt;n;i++)
+{
+cin&gt;&gt;arr[i];
+}
+last=arr[n-1];
+for(i=n-1;i&gt;0;i--)
+{
+arr[i]=arr[i-1];
+}
+arr[0]=last;
+cout&lt;&lt;&quot;Array after cyclic rotation:&quot;&lt;&lt;endl;
+for(i=0;i&lt;n;i++)
+{
+cout&lt;&lt;arr[i]&lt;&lt;&quot; &quot;;
+}
+return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter the size of an array:5
+Enter the elements:1
+2
+3
+4
+5
+Array after cyclic rotation:
+5 1 2 3 4
+</h3></pre>
+</section>
+<a href="../array.html">Back to Topic</a>
+</body>
+</html>
