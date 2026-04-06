@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Read two String user input and check if first contains second?</h2>
+<pre><h3>
+//Read two String user input and check if first contains second?
+#include&lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    char a[100], b[50];
+    int i, j, count;
+
+    cout&lt;&lt;&quot;Enter first string: &quot;;
+    cin&gt;&gt;a;
+
+    cout&lt;&lt;&quot;Enter second string: &quot;;
+    cin&gt;&gt;b;
+
+    for(i=0; a[i]!=&#x27;\0&#x27;; i++)
+    {
+        count = 0;
+
+        for(j=0; b[j]!=&#x27;\0&#x27;; j++)
+        {
+            if(a[i+j] == b[j])
+                count++;
+        }
+
+        if(count &gt; 0 &amp;&amp; count == j)
+        {
+            cout&lt;&lt;&quot;Yes, it contains&quot;;
+            return 0;
+        }
+    }
+
+    cout&lt;&lt;&quot;No, it does not contain&quot;;
+
+    return 0;
+}/*OUTPUT
+Enter first string: helllo
+Enter second string: lo
+Yes, it contains
+*/
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter first string: helllo
+Enter second string: lo
+Yes, it contains
+</h3></pre>
+</section>
+<a href="../string.html">Back to Topic</a>
+</body>
+</html>

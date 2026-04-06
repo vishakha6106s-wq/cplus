@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Program to remove all occurrences of a given character from input String?</h2>
+<pre><h3>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    char str[50], ch;
+    int i, j=0;
+
+    cout&lt;&lt;&quot;Enter string: ";
+    cin&gt;&gt;str;
+
+    cout&lt;&lt;&quot;Enter character to remove: ";
+    cin&gt;&gt;ch;
+
+    for(i=0; str[i]!='\0'; i++)
+    {
+        if(str[i] != ch)
+        {
+            str[j] = str[i];
+            j++;
+        }
+    }
+
+    str[j] = &#x27;\0&#x27;;
+
+    cout&lt;&lt;&quot;After removing: &quot;&lt;&lt;str;
+
+    return 0;
+}
+
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter string: hello
+Enter character to remove: o
+After removing: hell
+</h3></pre>
+</section>
+<a href="../string.html">Back to Topic</a>
+</body>
+</html>

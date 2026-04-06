@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Program to Add Characters to a String</h2>
+<pre><h3>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    char str[50];
+    char ch;
+    int i;
+
+    cout&lt;&lt;&quot;Enter string: &quot;;
+    cin&gt;&gt;str;
+
+    cout&lt;&lt;&quot;Enter character: &quot;;
+    cin&gt;&gt;ch;
+
+    // find end of string
+    for(i=0; str[i] != &#x27;\0&#x27;; i++)
+    {
+        // just move forward
+    }
+
+    // add character
+    str[i] = ch;
+    i++;
+    str[i] = &#x27;\0&#x27;;
+
+    cout&lt;&lt;&quot;New string: &quot;&lt;&lt;str;
+
+    return 0;
+}
+
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter string: bye
+Enter character: h
+New string: byeh 
+</h3></pre>
+</section>
+<a href="../string.html">Back to Topic</a>
+</body>
+</html>

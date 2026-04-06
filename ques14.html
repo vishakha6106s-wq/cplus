@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Program to find maximum and minimum occurring character in a string</h2>
+<pre><h3>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    char str[50];
+    int i, j, count, max=0, min=100;
+    char maxc, minc;
+
+    cout&lt;&lt;&quot;Enter string: &quot;;
+    cin&gt;&gt;str;
+
+    for(i=0; str[i]!=&#x27;\0&#x27;; i++)
+    {
+        count = 0;
+
+        for(j=0; str[j]!=&#x27;\0&#x27;; j++)
+        {
+            if(str[i] == str[j])
+                count++;
+        }
+
+        if(count &gt; max)
+        {
+            max = count;
+            maxc = str[i];
+        }
+
+        if(count &lt; min)
+        {
+            min = count;
+            minc = str[i];
+        }
+    }
+
+    cout&lt;&lt;&quot;Max char: &quot;&lt;&lt;maxc&lt;&lt;endl;
+    cout&lt;&lt;&quot;Min char: &quot;&lt;&lt;minc;
+
+    return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter string: hello
+Max char: l
+Min char: h
+</h3></pre>
+</section>
+<a href="../string.html">Back to Topic</a>
+</body>
+</html>

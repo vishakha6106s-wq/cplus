@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Write a C++ method that accepts three integers and returns true if one is the middle point between the other two integers, otherwise false</h2>
+<pre><h3>
+//Write a C++ method that accepts three integers and returns true if one is the middle point between the other two integers, otherwise false
+#include&lt;iostream&gt;
+using namespace std;
+
+bool check(int a, int b, int c)
+{
+    if((a&gt;b &amp;&amp; a&lt;c) || (a&lt;c &amp;&amp; a&gt;b))
+        return true;
+
+    if((b&gt;a &amp;&amp; b&lt;c) || (b&lt;c &amp;&amp; b&gt;a))
+        return true;
+
+    if((c&gt;a &amp;&amp; c&lt;b) || (c&lt;b &amp;&amp; c&gt;a))
+        return true;
+
+    return false;
+}
+
+int main()
+{
+    int a,b,c;
+
+    cout&lt;&lt;&quot;Enter 3 numbers: &quot;;
+    cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;
+
+    if(check(a,b,c))
+        cout&lt;&lt;&quot;True&quot;;
+    else
+        cout&lt;&lt;&quot;False&quot;;
+
+    return 0;
+}/*OUTPUT
+Enter 3 numbers: 2 5 8
+True
+Enter 3 numbers: 5 5 5
+False
+*/
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter 3 numbers: 2 5 8
+True
+Enter 3 numbers: 5 5 5
+False
+</h3></pre>
+</section>
+<a href="../string.html">Back to Topic</a>
+</body>
+</html>

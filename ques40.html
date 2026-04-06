@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Write a C++ method to check whether a string is a valid password.</h2>
+<pre><h3>
+//Write a C++ method to check whether a string is a valid password.
+#include&lt;iostream&gt;
+using namespace std;
+
+int checkPassword(char str[])
+{
+    int i=0, len=0, digit=0;
+
+    while(str[i] != &#x27;\0&#x27;)
+    {
+        len++;
+
+        if(str[i] &gt;= &#x27;0&#x27; &amp;&amp; str[i] &lt;= &#x27;9&#x27;)
+            digit = 1;
+
+        i++;
+    }
+
+    if(len &gt;= 6 &amp;&amp; digit == 1)
+        return 1;
+    else
+        return 0;
+}
+
+int main()
+{
+    char pass[50];
+
+    cout&lt;&lt;&quot;Enter password: &quot;;
+    cin&gt;&gt;pass;
+
+    if(checkPassword(pass))
+        cout&lt;&lt;&quot;Valid Password&quot;;
+    else
+        cout&lt;&lt;&quot;Invalid Password&quot;;
+
+    return 0;
+}/*output
+Enter password: abc123
+Valid Password
+*/
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter password: abc123
+Valid Password
+</h3></pre>
+</section>
+<a href="../string.html">Back to Topic</a>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Program to find Reverse of the string</h2>
+<pre><h3>
+#include&lt;iostream&gt;
+#include&lt;cstring&gt;
+using namespace std;
+int main()
+{
+   
+    char arr[50],str[50];
+    int i,l,j=0;
+    cout&lt;&lt;&quot;Enter a string : &quot;;
+    cin.getline(arr,50);
+    
+    l=strlen(arr);
+    for(i=l-1 ; i&gt;=0 ; i-- )
+    {
+        str[j]=arr[i];
+        j++;
+    }
+    str[j] = &#x27;\0&#x27;; 
+    cout&lt;&lt;str;
+    return 0;
+}
+
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter string: hello
+olleh
+</h3></pre>
+</section>
+<a href="../string.html">Back to Topic</a>
+</body>
+</html>

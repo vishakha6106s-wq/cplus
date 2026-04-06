@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Write a C++ method to display the current date and time.</h2>
+<pre><h3>
+//Write a C++ method to display the current date and time.
+#include&lt;iostream&gt;
+#include&lt;ctime&gt;
+using namespace std;
+
+void show()
+{
+    time_t t = time(0);
+    tm *x = localtime(&amp;t);
+
+    cout&lt;&lt;&quot;Date: &quot;&lt;&lt;x-&gt;tm_mday&lt;&lt;&quot;/&quot;&lt;&lt;x-&gt;tm_mon+1&lt;&lt;&quot;/&quot;&lt;&lt;x-&gt;tm_year+1900&lt;&lt;endl;
+    cout&lt;&lt;&quot;Time: &quot;&lt;&lt;x-&gt;tm_hour&lt;&lt;&quot;:&quot;&lt;&lt;x-&gt;tm_min&lt;&lt;&quot;:&quot;&lt;&lt;x-&gt;tm_sec;
+}
+
+int main()
+{
+    show();
+    return 0;
+}
+/*OUTPUTDate: 28/3/2026
+Time: 23:45:30% 
+*/
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Date: 28/3/2026
+Time: 23:45:30%
+</h3></pre>
+</section>
+<a href="../string.html">Back to Topic</a>
+</body>
+</html>

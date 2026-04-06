@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Program to find the duplicate characters in a string</h2>
+<pre><h3>
+#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+    char str[50];
+    int i, j;
+
+    cout&lt;&lt;&quot;Enter string: &quot;;
+    cin&gt;&gt;str;
+
+    cout&lt;&lt;&quot;Duplicate characters: &quot;;
+
+    for(i=0; str[i]!=&#x27;\0&#x27;; i++)
+    {
+        for(j=i+1; str[j]!=&#x27;\0&#x27;; j++)
+        {
+            if(str[i] == str[j])
+            {
+                cout&lt;&lt;str[i]&lt;&lt;&quot; &quot;;
+                break;   // print once
+            }
+        }
+    }
+
+    return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter string: hello
+Duplicate characters: l
+</h3></pre>
+</section>
+<a href="../string.html">Back to Topic</a>
+</body>
+</html>

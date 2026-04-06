@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Program to determine whether one string is a rotation of another</h2>
+<pre><h3>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    char s1[50], s2[50], temp[100];
+    int i, j, found = 0;
+
+    cout&lt;&lt;&quot;Enter first string: &quot;;
+    cin&gt;&gt;s1;
+
+    cout&lt;&lt;&quot;Enter second string: &quot;;
+    cin&gt;&gt;s2;
+
+    // copy s1
+    for(i=0; s1[i]!=&#x27;\0&#x27;; i++)
+    {
+        temp[i] = s1[i];
+    }
+
+    // add s1 again
+    for(j=0; s1[j]!=&#x27;\0&#x27;; j++)
+    {
+        temp[i+j] = s1[j];
+    }
+
+    temp[i+j] = &#x27;\0&#x27;;
+
+    // check s2 inside temp
+    for(i=0; temp[i]!=&#x27;\0&#x27;; i++)
+    {
+        for(j=0; s2[j]!=&#x27;\0&#x27;; j++)
+        {
+            if(temp[i+j] != s2[j])
+                break;
+        }
+
+        if(s2[j]==&#x27;\0&#x27;)
+        {
+            found = 1;
+            break;
+        }
+    }
+
+    if(found==1)
+        cout&lt;&lt;&quot;Rotation&quot;;
+    else
+        cout&lt;&lt;&quot;Not Rotation&quot;;
+
+    return 0;
+}</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter first string: abcde
+Enter second string: eabcd
+Rotation
+</h3></pre>
+</section>
+<a href="../string.html">Back to Topic</a>
+</body>
+</html>

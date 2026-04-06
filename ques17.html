@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Program to find the frequency of characters</h2>
+<pre><h3>
+#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+    char str[50];
+    int i, j, count;
+
+    cout&lt;&lt;&quot;Enter string: &quot;;
+    cin&gt;&gt;str;
+
+    for(i=0; str[i]!=&#x27;\0&#x27;; i++)
+    {
+        count = 0;
+
+        for(j=0; str[j]!=&#x27;\0&#x27;; j++)
+        {
+            if(str[i] == str[j])
+                count++;
+        }
+
+        cout&lt;&lt;str[i]&lt;&lt;&quot; = &quot;&lt;&lt;count&lt;&lt;endl;
+    }
+
+    return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter string: hello
+h = 1
+e = 1
+l = 2
+l = 2
+o = 1
+</h3></pre>
+</section>
+<a href="../string.html">Back to Topic</a>
+</body>
+</html>

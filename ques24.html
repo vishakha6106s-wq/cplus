@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Program to print smallest and biggest possible palindrome word in a given string</h2>
+<pre><h3>
+#include&lt;iostream&gt;
+using namespace std;
+int main()
+{
+    char str[100], word[20];
+    int i=0, j=0;
+
+    char small[20]=&quot;&quot;, big[20]=&quot;&quot;;
+
+    cout&lt;&lt;&quot;Enter string: &quot;;
+    cin.getline(str,100);
+
+    while(1)
+    {
+        if(str[i]!=&#x27; &#x27; &amp;&amp; str[i]!=&#x27;\0&#x27;)
+        {
+            word[j]=str[i];
+            j++;
+        }
+        else
+        {
+            word[j]=&#x27;\0&#x27;;
+
+            // check palindrome
+            int len=j, flag=1;
+            for(int k=0; k&lt;len/2; k++)
+            {
+                if(word[k]!=word[len-1-k])
+                    flag=0;
+            }
+
+            if(flag==1 &amp;&amp; len&gt;0)
+            {
+                if(small[0]==&#x27;\0&#x27; || len &lt; strlen(small))
+                    strcpy(small,word);
+
+                if(big[0]==&#x27;\0&#x27; || len &gt; strlen(big))
+                    strcpy(big,word);
+            }
+
+            j=0;
+
+            if(str[i]==&#x27;\0&#x27;)
+                break;
+        }
+        i++;
+    }
+
+    if(small[0]==&#x27;\0&#x27;)
+        cout&lt;&lt;&quot;No palindrome word&quot;;
+    else
+    {
+        cout&lt;&lt;&quot;Smallest: &quot;&lt;&lt;small&lt;&lt;endl;
+        cout&lt;&lt;&quot;Biggest: &quot;&lt;&lt;big;
+    }
+
+    return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter string: wow big level
+Smallest: wow
+Biggest: level
+</h3></pre>
+</section>
+<a href="../string.html">Back to Topic</a>
+</body>
+</html>

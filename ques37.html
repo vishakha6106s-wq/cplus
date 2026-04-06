@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Write a C++ Program to Sort Names in an Alphabetical Order</h2>
+<pre><h3>
+//Write a C++ Program to Sort Names in an Alphabetical Order
+#include&lt;iostream&gt;
+#include&lt;cstring&gt;
+using namespace std;
+
+int main()
+{
+    char name[5][20];
+    int i, j;
+
+    cout&lt;&lt;&quot;Enter 5 names:\n&quot;;
+    for(i=0; i&lt;5; i++)
+        cin&gt;&gt;name[i];
+
+    // sorting
+    for(i=0; i&lt;5; i++)
+    {
+        for(j=i+1; j&lt;5; j++)
+        {
+            if(strcmp(name[i], name[j]) &gt; 0)
+            {
+                char temp[20];
+                strcpy(temp, name[i]);
+                strcpy(name[i], name[j]);
+                strcpy(name[j], temp);
+            }
+        }
+    }
+
+    cout&lt;&lt;&quot;\nSorted names:\n&quot;;
+    for(i=0; i&lt;5; i++)
+        cout&lt;&lt;name[i]&lt;&lt;endl;
+
+    return 0;
+}/*OUTPUT
+Enter 5 names:
+Ravi
+Aman
+Simran
+Karan
+Neha
+
+Sorted names:
+Aman
+Karan
+Neha
+Ravi
+Simran */
+
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter 5 names:
+Ravi
+Aman
+Simran
+Karan
+Neha
+
+Sorted names:
+Aman
+Karan
+Neha
+Ravi
+Simran
+</h3></pre>
+</section>
+<a href="../string.html">Back to Topic</a>
+</body>
+</html>

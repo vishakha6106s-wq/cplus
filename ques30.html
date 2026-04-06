@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Program to swap two string variables without using third or temp variable.</h2>
+<pre><h3>
+//Program to swap two string variables without using third or temp variable.
+#include&lt;iostream&gt;
+#include&lt;cstring&gt;
+using namespace std;
+
+int main()
+{
+    char a[100], b[100], temp[100];
+
+    cout&lt;&lt;&quot;Enter first string: &quot;;
+    cin&gt;&gt;a;
+
+    cout&lt;&lt;&quot;Enter second string: &quot;;
+    cin&gt;&gt;b;
+
+    strcpy(temp, a);
+    strcpy(a, b);
+    strcpy(b, temp);
+
+    cout&lt;&lt;&quot;After swap:&quot;&lt;&lt;endl;
+    cout&lt;&lt;&quot;a = &quot;&lt;&lt;a&lt;&lt;endl;
+    cout&lt;&lt;&quot;b = &quot;&lt;&lt;b;
+    
+    return 0;
+}/*Enter first string: hey
+Enter second string: bye
+After swap:
+a = bye
+b = hey% 
+*/
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Output not given in source file.
+</h3></pre>
+</section>
+<a href="../string.html">Back to Topic</a>
+</body>
+</html>

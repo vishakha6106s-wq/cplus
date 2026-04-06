@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Program to find all the permutations of a string</h2>
+<pre><h3>
+#include&lt;iostream&gt;
+using namespace std;
+
+void swap(char &amp;a, char &amp;b)
+{
+    char temp = a;
+    a = b;
+    b = temp;
+}
+
+void permute(char str[], int l, int r)
+{
+    int i;
+
+    if(l == r)
+    {
+        cout&lt;&lt;str&lt;&lt;endl;
+        return;
+    }
+
+    for(i = l; i &lt;= r; i++)
+    {
+        swap(str[l], str[i]);
+        permute(str, l+1, r);
+        swap(str[l], str[i]);   // back
+    }
+}
+
+int main()
+{
+    char str[10];
+
+    cout&lt;&lt;&quot;Enter string: &quot;;
+    cin&gt;&gt;str;
+
+    int len = 0;
+    while(str[len] != &#x27;\0&#x27;)
+        len++;
+
+    permute(str, 0, len-1);
+
+    return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter string: abc
+abc
+acb
+bac
+bca
+cba
+cab
+</h3></pre>
+</section>
+<a href="../string.html">Back to Topic</a>
+</body>
+</html>
