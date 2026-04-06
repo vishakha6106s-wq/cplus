@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Overloading</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Define a class Complex to represent complex numbers. Overload the + operator to add two complex numbers.</h2>
+<pre><h3>
+#include &lt;iostream&gt;
+using namespace std;
+class Complex {
+    int r, i;
+public:
+    Complex(int x = 0, int y = 0) {
+        r = x;
+        i = y;
+    }
+    Complex operator+(Complex c) {
+        return Complex(r + c.r, i + c.i);
+    }
+    void show() {
+        cout &lt;&lt; r &lt;&lt; &quot; + &quot; &lt;&lt; i &lt;&lt; &quot;i&quot;;
+    }
+};
+int main() {
+    Complex a(2, 3), b(4, 5), c;
+    c = a + b;
+    c.show();
+    return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+6+8i
+</h3></pre>
+</section>
+<a href="../operatoroverloading.html">Back to Topic</a>
+</body>
+</html>

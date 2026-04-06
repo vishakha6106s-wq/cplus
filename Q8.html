@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Overloading</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Define a class Time to represent time. Overload the &lt;&lt; operator to display the time in HH:MM format.</h2>
+<pre><h3>
+
+#include &lt;iostream&gt;
+using namespace std;
+
+class Time {
+    int h, m;
+
+public:
+    Time(int hh=0, int mm=0) {
+        h = hh; m = mm;
+    }
+
+    friend ostream&amp; operator&lt;&lt;(ostream &amp;out, Time t) {
+        out &lt;&lt; t.h &lt;&lt; &quot;:&quot; &lt;&lt; t.m;
+        return out;
+    }
+};
+
+int main() {
+    Time t(10, 30);
+    cout &lt;&lt; t;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+10:30
+</h3></pre>
+</section>
+<a href="../operatoroverloading.html">Back to Topic</a>
+</body>
+</html>

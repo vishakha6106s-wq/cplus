@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Functions</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h2>Write a C++ program to create an abstract class Shape2D with abstract methods draw() and resize(). Create derived classes Rectangle and Circle that extend the Shape2D class and implement the respective methods to draw and resize each shape.</h2>
+<pre><h3>
+#include &lt;iostream&gt;
+using namespace std;
+
+class shape2d
+{
+protected:
+    virtual void draw() = 0;
+    virtual void resize() = 0;
+};
+
+class rectangle : public shape2d
+{
+    float length = 10.0, breadth = 10.0;
+
+public:
+    void draw()
+    {
+        cout &lt;&lt; &quot;Rectangle is drawn(default size: length 10 units, breadth 10 units)&quot; &lt;&lt; endl;
+    }
+    void resize()
+    {
+        length = 20.0;
+        breadth = 20.0;
+        cout &lt;&lt; &quot;Rectangle is resized(New size lenght &quot; &lt;&lt; length &lt;&lt; &quot; Units &quot; &lt;&lt; &quot; breadth &quot; &lt;&lt; breadth &lt;&lt; &quot; Units )&quot; &lt;&lt; endl;
+    }
+};
+class circle : public shape2d
+{
+    float rad = 10.0;
+
+public:
+    void draw()
+    {
+        cout &lt;&lt; &quot;Circle is drawn(default size: radius 10 units)&quot; &lt;&lt; endl;
+    }
+    void resize()
+    {
+        rad = 20.0;
+        cout &lt;&lt; &quot;Circle is resized(New size Radius &quot; &lt;&lt; rad &lt;&lt; &quot;Units)&quot; &lt;&lt; endl;
+    }
+};
+
+int main()
+{
+    circle c1;
+    rectangle r1;
+
+    c1.draw();
+    r1.draw();
+    cout &lt;&lt; endl;
+    c1.resize();
+    r1.resize();
+
+    return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Circle is drawn(default size: radius 10 units)
+Rectangle is drawn(default size: length 10 units, breadth 10 units)
+Circle is resized(New size Radius 20 Units)
+Rectangle is resized(New size lenght 20 Units breadth 20 Units)
+</h3></pre>
+
+<a href="../virtualfunctions.html">Back to Topic</a>
+</body>
+</html>

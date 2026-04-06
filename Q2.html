@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Overloading</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Create a class Fraction to represent fractions. Overload the + operator to add two fractions.</h2>
+<pre><h3>
+
+#include &lt;iostream&gt;
+using namespace std;
+
+class Fraction {
+    int n, d;
+
+public:
+    Fraction(int x = 0, int y = 1) {
+        n = x;
+        d = y;
+    }
+
+    Fraction operator+(Fraction f) {
+        return Fraction(n * f.d + f.n * d, d * f.d);
+    }
+
+    void show() {
+        cout &lt;&lt; n &lt;&lt; &quot;/&quot; &lt;&lt; d;
+    }
+};
+
+int main() {
+    Fraction a(1, 2), b(3, 4), c;
+    c = a + b;
+    c.show();
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+10/8
+</h3></pre>
+</section>
+<a href="../operatoroverloading.html">Back to Topic</a>
+</body>
+</html>

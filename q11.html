@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Functions</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<h2>Write a C++ program to create an abstract class GeometricShape with abstract methods area() and perimeter(). Create derived classes Triangle and Square that extend the GeometricShape class and implement the respective methods to calculate the area and perimeter of each shape</h2>
+<pre><h3>
+#include &lt;iostream&gt;
+#include &lt;math.h&gt;
+using namespace std;
+
+class geometricshape
+{
+protected:
+    virtual double area() = 0;
+    virtual double perimeter() = 0;
+};
+
+class square : public geometricshape
+{
+private:
+    double side;
+
+public:
+    square(double s)
+    {
+        side = s;
+    }
+
+    double area()
+    {
+        return (side * side);
+    }
+    double perimeter()
+    {
+        return (4.0 * side);
+    }
+};
+class triangle : public geometricshape
+{
+private:
+    double s1, s2, s3;
+
+public:
+    triangle(double side1, double side2, double side3)
+    {
+        s1 = side1;
+        s2 = side2;
+        s3 = side3;
+    }
+
+    double area()
+    {
+        double sum = ((s1 + s2 + s3) / 2);
+        return (sqrt(sum * (sum - s1) * (sum - s2) * (sum - s3)));
+    }
+    double perimeter()
+    {
+        return (s1 + s2 + s3);
+    }
+};
+
+int main()
+{
+    square s1(10);
+    triangle t1(10, 10, 10);
+
+    cout &lt;&lt; &quot;Area of triangle: &quot; &lt;&lt; t1.area() &lt;&lt; endl;
+    cout &lt;&lt; &quot;Perimeter of triangle: &quot; &lt;&lt; t1.perimeter();
+    cout &lt;&lt; endl;
+    cout &lt;&lt; &quot;Area of Square: &quot; &lt;&lt; s1.area() &lt;&lt; endl;
+    cout &lt;&lt; &quot;Perimeter of Square: &quot; &lt;&lt; s1.perimeter();
+
+    return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Area of triangle: 43.3013
+Perimeter of triangle:30
+Area of Square: 100
+Perimeter of Square: 40
+</h3></pre>
+<a href="../virtualfunctions.html">Back to Topic</a>
+</body>
+</html>

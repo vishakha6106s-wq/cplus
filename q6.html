@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Functions</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h2>Write a C++ program to create an abstract class Shape3D with abstract methods calculateVolume() and calculateSurfaceArea(). Create derived classes Sphere and Cube that extend the Shape3D class and implement the respective methods to calculate the volume and surface area of each shape</h2>
+<pre><h3>
+#include &lt;iostream&gt;
+#include &lt;math.h&gt;
+using namespace std;
+
+class shape3d
+{
+protected:
+    virtual double calculateVolume() = 0;
+    virtual double calculateSurfaceArea() = 0;
+};
+
+class sphere : public shape3d
+{
+private:
+    double rad;
+
+public:
+    sphere(double radius)
+    {
+        rad = radius;
+    }
+
+    double calculateVolume()
+    {
+        return ((4.0 / 3) * M_PI * rad * rad * rad);
+    }
+    double calculateSurfaceArea()
+    {
+        return (4.0 * M_PI * rad * rad);
+    }
+};
+class cube : public shape3d
+{
+private:
+    double side;
+
+public:
+    cube(double s)
+    {
+        side = s;
+    }
+
+    double calculateSurfaceArea()
+    {
+        return (6.0 * side * side);
+    }
+    double calculateVolume()
+    {
+        return (side * side * side);
+    }
+};
+
+int main()
+{
+    sphere s1(10);
+    cube c1(10);
+
+    cout &lt;&lt; &quot;Surface Area of Sphere(radius 10units): &quot; &lt;&lt; s1.calculateSurfaceArea() &lt;&lt; endl;
+    cout &lt;&lt; &quot;Volume of Sphere(radius 10units): &quot; &lt;&lt; s1.calculateVolume() &lt;&lt; endl;
+    cout &lt;&lt; &quot;Surface Area of cube(side 10units): &quot; &lt;&lt; c1.calculateSurfaceArea() &lt;&lt; endl;
+    cout &lt;&lt; &quot;Volume of cube(side 10units): &quot; &lt;&lt; c1.calculateVolume() &lt;&lt; endl;
+
+    return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Surface Area of Sphere(radius 10units): 1256.64
+Volume of Sphere(radius 10units): 4188.79
+Surface Area of cube(side 10units): 600
+Volume of cube(side 10units): 1000
+</h3></pre>
+<a href="../virtualfunctions.html">Back to Topic</a>
+</body>
+</html>

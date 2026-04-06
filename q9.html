@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Functions</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h2>Write a C++ program to create an abstract class Instrument with abstract methods play() and tune(). Create derived classes for Glockenspiel and Violin that extend the Instrument class and implement the respective methods to play and tune each instrument.</h2>
+<pre><h3>
+#include &lt;iostream&gt;
+#include &lt;string.h&gt;
+using namespace std;
+
+class instrument
+{
+protected:
+    virtual void play() = 0;
+    virtual void tune() = 0;
+};
+class Glockenspiel : public instrument
+{
+public:
+    void play()
+    {
+        cout &lt;&lt; &quot;Glockenspiel is playing bright bell-like notes.&quot; &lt;&lt; endl;
+    }
+    void tune()
+    {
+        cout &lt;&lt; &quot;Glockenspiel bars are tuned.&quot; &lt;&lt; endl;
+    }
+};
+class Violin : public instrument
+{
+public:
+    void play()
+    {
+        cout &lt;&lt; &quot;Violin is playing smooth string music.&quot; &lt;&lt; endl;
+    }
+    void tune()
+    {
+        cout &lt;&lt; &quot;Violin strings are being tuned.&quot; &lt;&lt; endl;
+    }
+};
+
+int main()
+{
+    Glockenspiel g1;
+    Violin v1;
+
+    g1.play();
+    v1.play();
+    g1.tune();
+    v1.tune();
+
+    return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Glockenspiel is playing bright bell-like notes.
+Violin is playing smooth string music.
+Glockenspiel bars are tuned.
+Violin strings are being tuned.
+</h3></pre>
+</section>
+<a href="../virtualfunctions.html">Back to Topic</a>
+</body>
+</html>

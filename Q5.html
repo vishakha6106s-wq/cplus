@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Overloading</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Define a class Date to represent dates. Overload the &lt; operator to compare two dates</h2>
+<pre><h3>
+
+#include &lt;iostream&gt;
+using namespace std;
+
+class Date {
+    int d, m, y;
+
+public:
+    Date(int dd=0, int mm=0, int yy=0) {
+        d = dd; m = mm; y = yy;
+    }
+
+    bool operator&lt;(Date x) {
+        if(y &lt; x.y) return true;
+        if(y == x.y &amp;&amp; m &lt; x.m) return true;
+        if(y == x.y &amp;&amp; m == x.m &amp;&amp; d &lt; x.d) return true;
+        return false;
+    }
+};
+
+int main() {
+    Date a(1,1,2020), b(2,1,2020);
+    if(a &lt; b)
+        cout &lt;&lt; &quot;a is earlier&quot;;
+    else
+        cout &lt;&lt; &quot;b is earlier&quot;;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+a is earlier
+</h3></pre>
+</section>
+<a href="../operatoroverloading.html">Back to Topic</a>
+</body>
+</html>

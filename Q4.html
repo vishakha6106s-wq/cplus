@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Overloading</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Implement a class String to represent strings. Overload the + operator to concatenate two strings.</h2>
+<pre><h3>
+
+#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+using namespace std;
+
+class String {
+    char s[50];
+
+public:
+    String(char str[] = &quot;&quot;) {
+        strcpy(s, str);
+    }
+
+    String operator+(String t) {
+        String r;
+        strcpy(r.s, s);
+        strcat(r.s, t.s);
+        return r;
+    }
+
+    void show() {
+        cout &lt;&lt; s;
+    }
+};
+
+int main() {
+    String a(&quot;Hello &quot;), b(&quot;World&quot;), c;
+    c = a + b;
+    c.show();
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Hello World
+</h3></pre>
+</section>
+<a href="../operatoroverloading.html">Back to Topic</a>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Functions</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h2>Write a C++ program to create an abstract class Vehicle with abstract methods startEngine() and stopEngine(). Create derived classes Car and Motorcycle that extend the Vehicle class and implement the respective methods to start and stop the engines for each vehicle type.</h2>
+<pre><h3>
+#include &lt;iostream&gt;
+#include &lt;string.h&gt;
+using namespace std;
+
+class vehicle
+{
+protected:
+    virtual void startEngine() = 0;
+    virtual void stopEngine() = 0;
+};
+class car : public vehicle
+{
+public:
+    void startEngine()
+    {
+        cout &lt;&lt; &quot;Car Engine Started&quot; &lt;&lt; endl;
+    }
+    void stopEngine()
+    {
+        cout &lt;&lt; &quot;Car Engine Stopped&quot; &lt;&lt; endl;
+    }
+};
+class motorcycle : public vehicle
+{
+public:
+    void startEngine()
+    {
+        cout &lt;&lt; &quot;MotorCycle Engine Started&quot; &lt;&lt; endl;
+    }
+    void stopEngine()
+    {
+        cout &lt;&lt; &quot;Motorcycle Engine Stopped&quot; &lt;&lt; endl;
+    }
+};
+
+int main()
+{
+    car c1;
+    motorcycle m1;
+
+    c1.startEngine();
+    c1.stopEngine();
+    m1.startEngine();
+    m1.stopEngine();
+
+    return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Car Engine Started
+ Car Engine Stopped
+ MotorCycle Engine Started
+ Motorcycle Engine Stopped
+</h3></pre>
+
+<a href="../virtualfunctions.html">Back to Topic</a>
+</body>
+</html>

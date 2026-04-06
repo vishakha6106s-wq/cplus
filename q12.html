@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Functions</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h2>Write a C++ program to create an abstract class Bird with abstract methods fly() and makeSound(). Create derived classes Eagle and Hawk that extend the Bird class and implement the respective methods to describe how each bird flies and makes a sound.</h2>
+<pre><h3>
+#include &lt;iostream&gt;
+#include &lt;string.h&gt;
+using namespace std;
+
+class bird
+{
+protected:
+    virtual void makesound() = 0;
+    virtual void fly() = 0;
+};
+class eagle : public bird
+{
+public:
+    void makesound()
+    {
+        cout &lt;&lt; &quot;Eagle is soaring in the sky.&quot; &lt;&lt; endl;
+    }
+    void fly()
+    {
+        cout &lt;&lt; &quot;Eagle makes a sharp cry.&quot; &lt;&lt; endl;
+    }
+};
+class hawk : public bird
+{
+public:
+    void makesound()
+    {
+        cout &lt;&lt; &quot;Hawk is flying high.&quot; &lt;&lt; endl;
+    }
+    void fly()
+    {
+        cout &lt;&lt; &quot;Hawk screeches.&quot; &lt;&lt; endl;
+    }
+};
+
+int main()
+{
+    eagle e1;
+    hawk h1;
+
+    e1.fly();
+    h1.fly();
+    cout &lt;&lt; endl;
+    e1.makesound();
+    h1.makesound();
+
+    return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Eagle makes a sharp cry.
+Hawk screeches.
+
+Eagle is soaring in the sky.
+Hawk is flying high.
+</h3></pre>
+<a href="../virtualfunctions.html">Back to Topic</a>
+</body>
+</html>

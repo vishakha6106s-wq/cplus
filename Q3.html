@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Overloading</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Define a class Matrix to represent matrices. Overload the * operator to multiply two matrices.</h2>
+<pre><h3>
+//Define a class Matrix to represent matrices. Overload the * operator to multiply two matrices.
+
+#include &lt;iostream&gt;
+using namespace std;
+
+class Matrix {
+    int a[2][2];
+
+public:
+    void input() {
+        for(int i=0;i&lt;2;i++)
+            for(int j=0;j&lt;2;j++)
+                cin &gt;&gt; a[i][j];
+    }
+
+    Matrix operator*(Matrix m) {
+        Matrix r;
+        for(int i=0;i&lt;2;i++)
+            for(int j=0;j&lt;2;j++) {
+                r.a[i][j] = 0;
+                for(int k=0;k&lt;2;k++)
+                    r.a[i][j] += a[i][k] * m.a[k][j];
+            }
+        return r;
+    }
+
+    void show() {
+        for(int i=0;i&lt;2;i++) {
+            for(int j=0;j&lt;2;j++)
+                cout &lt;&lt; a[i][j] &lt;&lt; &quot; &quot;;
+            cout &lt;&lt; endl;
+        }
+    }
+};
+
+int main() {
+    Matrix x, y, z;
+    x.input();
+    y.input();
+    z = x * y;
+    z.show();
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Output not given in source file.
+</h3></pre>
+</section>
+<a href="../operatoroverloading.html">Back to Topic</a>
+</body>
+</html>

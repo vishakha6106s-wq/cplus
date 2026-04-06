@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Functions</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<h2>Write a C++ program to create an abstract class Animal with an abstract method called sound(). Create derived classes Lion and Tiger that extend the Animal class and implement the sound() method to make a specific sound for each animal.</h2>
+<pre><h3>
+#include &lt;iostream&gt;
+#include &lt;string.h&gt;
+using namespace std;
+
+class animal
+{
+protected:
+    virtual void sound() = 0;
+};
+class tiger : public animal
+{
+public:
+    void sound()
+    {
+        cout &lt;&lt; &quot;Tiger roars.&quot; &lt;&lt; endl;
+    }
+};
+class lion : public animal
+{
+public:
+    void sound()
+    {
+        cout &lt;&lt; &quot;Lion roars loudly.&quot; &lt;&lt; endl;
+    }
+};
+
+int main()
+{
+    tiger t1;
+    lion l1;
+
+    t1.sound();
+    cout &lt;&lt; endl;
+    l1.sound();
+    return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Tiger roars
+Lion roars loudly
+</h3></pre>
+<a href="../virtualfunctions.html">Back to Topic</a>
+</body>
+</html>

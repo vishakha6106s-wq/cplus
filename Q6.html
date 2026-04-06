@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Overloading</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Implement a class Money to represent money. Overload the + operator to add two amounts of money.</h2>
+<pre><h3>
+
+#include &lt;iostream&gt;
+using namespace std;
+
+class Money {
+    int rs, ps;
+
+public:
+    Money(int r=0, int p=0) {
+        rs = r;
+        ps = p;
+    }
+
+    Money operator+(Money m) {
+        Money t;
+        t.ps = ps + m.ps;
+        t.rs = rs + m.rs + t.ps/100;
+        t.ps = t.ps % 100;
+        return t;
+    }
+
+    void show() {
+        cout &lt;&lt; rs &lt;&lt; &quot; Rs &quot; &lt;&lt; ps &lt;&lt; &quot; Ps&quot;;
+    }
+};
+
+int main() {
+    Money a(5,75), b(3,50), c;
+    c = a + b;
+    c.show();
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+9 Rs 25 Ps
+</h3></pre>
+</section>
+<a href="../operatoroverloading.html">Back to Topic</a>
+</body>
+</html>
