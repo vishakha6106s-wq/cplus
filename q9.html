@@ -3,68 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual Functions</title>
+    <title>OOPS</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-<h2>Write a C++ program to create an abstract class Instrument with abstract methods play() and tune(). Create derived classes for Glockenspiel and Violin that extend the Instrument class and implement the respective methods to play and tune each instrument.</h2>
+    <section>
+<h2>Write a C++ program to create a class called &quot;Employee&quot; with a name, salary, and hire date attributes, and a method to calculate years of service.</h2>
 <pre><h3>
-#include &lt;iostream&gt;
-#include &lt;string.h&gt;
+#include&lt;iostream&gt;
 using namespace std;
 
-class instrument
-{
-protected:
-    virtual void play() = 0;
-    virtual void tune() = 0;
-};
-class Glockenspiel : public instrument
+class Employee
 {
 public:
-    void play()
+    char name[20];
+    int salary;
+    int hireDate;   // simple hire date (year)
+
+    int yearsOfService(int currentYear)
     {
-        cout &lt;&lt; &quot;Glockenspiel is playing bright bell-like notes.&quot; &lt;&lt; endl;
-    }
-    void tune()
-    {
-        cout &lt;&lt; &quot;Glockenspiel bars are tuned.&quot; &lt;&lt; endl;
-    }
-};
-class Violin : public instrument
-{
-public:
-    void play()
-    {
-        cout &lt;&lt; &quot;Violin is playing smooth string music.&quot; &lt;&lt; endl;
-    }
-    void tune()
-    {
-        cout &lt;&lt; &quot;Violin strings are being tuned.&quot; &lt;&lt; endl;
+        return currentYear - hireDate;
     }
 };
 
 int main()
 {
-    Glockenspiel g1;
-    Violin v1;
+    Employee e;
+    int currentYear;
 
-    g1.play();
-    v1.play();
-    g1.tune();
-    v1.tune();
+    cout&lt;&lt;&quot;Enter name:&quot;;
+    cin&gt;&gt;e.name;
+    cout&lt;&lt;&quot;enter the salary:&quot;;
+    cin&gt;&gt;e.salary;
+    cout&lt;&lt;&quot;enter the hiredate:&quot;;
+    cin&gt;&gt;e.hireDate;
+
+    cout&lt;&lt;&quot;Enter current year: &quot;;
+    cin&gt;&gt;currentYear;
+
+    cout&lt;&lt;&quot;Years of service = &quot;&lt;&lt;e.yearsOfService(currentYear);
 
     return 0;
 }
 </h3></pre>
 <h2>Output</h2>
 <pre><h3>
-Glockenspiel is playing bright bell-like notes.
-Violin is playing smooth string music.
-Glockenspiel bars are tuned.
-Violin strings are being tuned.
+Enter name:ravi
+enter the salary:30000
+enter the hiredate:2024
+Enter current year: 2026
+Years of service = 2
 </h3></pre>
 </section>
-<a href="../virtualfunctions.html">Back to Topic</a>
+<a href="../oops.html">Back to Topic</a>
 </body>
 </html>

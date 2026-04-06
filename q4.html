@@ -3,91 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual Functions</title>
+    <title>OOPS</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-<h2>Write a C++ program to create an abstract class Animal with abstract methods eat() and sleep(). Create derived classes Lion, Tiger, and Deer that extend the Animal class and implement the eat() and sleep() methods differently based on their specific behavior.</h2>
+    <section>
+<h2>Write a C++ program to create a class called &quot;Circle&quot; with a radius attribute. You can access and modify this attribute. Calculate the area and circumference of the circle.</h2>
 <pre><h3>
-#include &lt;iostream&gt;
+#include&lt;iostream&gt;
 using namespace std;
 
-class animal
+class Circle
 {
-protected:
-    virtual void eat() = 0;
-    virtual void sleep() = 0;
+public:
+    float radius;
+
+    void setRadius(float r)
+    {
+        radius = r;
+    }
+
+    float getRadius()
+    {
+        return radius;
+    }
+
+    float area()
+    {
+        return 3.14 * radius * radius;
+    }
+
+    float circumference()
+    {
+        return 2 * 3.14 * radius;
+    }
 };
 
-class tiger : public animal
-{
-public:
-    void eat()
-    {
-        cout &lt;&lt; &quot;Tigers are obligatory carnovore with prey including (hoofed animals) weighing over 20 kg like deer species (Sambar, Chital), wild boar, gaur, and water buffalo&quot; &lt;&lt; endl;
-    }
-    void sleep()
-    {
-        cout &lt;&lt; &quot;Sleep time for tiger is 16-20 hours a day&quot;;
-    }
-};
-class lion : public animal
-{
-public:
-    void eat()
-    {
-        cout &lt;&lt; &quot;Lions are obligatory carnovore with prey including smaller animals (hares, birds) or carrion if necessary.&quot; &lt;&lt; endl;
-    }
-    void sleep()
-    {
-        cout &lt;&lt; &quot;Sleep time for lion is 15-20 hours a day&quot;;
-    }
-};
-class tiger : public animal
-{
-public:
-    void eat()
-    {
-        cout &lt;&lt; &quot;Deers are specialized herbivore with diet including leaves, twigs, buds, herbs, fruits, fungi, and lichen.&quot; &lt;&lt; endl;
-    }
-    void sleep()
-    {
-        cout &lt;&lt; &quot;Sleep time for Deer is 4-5 hours a day&quot;;
-    }
-};
 int main()
 {
-    tiger t;
-    lion l;
-    deer d;
+    Circle c;
 
-    cout&lt;&lt;&quot;Tiger:&quot;&lt;&lt;endl;
-    t.eat();
-    t.sleep()&lt;&lt;endl;
+    c.setRadius(4);   // set radius
 
-    cout&lt;&lt;&quot;Lion:&quot;&lt;&lt;endl;
-    l.eat();
-    l.sleep()&lt;&lt;endl;
+    cout &lt;&lt; &quot;Radius = &quot; &lt;&lt; c.getRadius() &lt;&lt; endl;
+    cout &lt;&lt; &quot;Area = &quot; &lt;&lt; c.area() &lt;&lt; endl;
+    cout &lt;&lt; &quot;Circumference = &quot; &lt;&lt; c.circumference();
 
-    cout&lt;&lt;&quot;Deer:&quot;&lt;&lt;endl;
-    d.eat();
-    d.sleep();
     return 0;
 }
 </h3></pre>
 <h2>Output</h2>
 <pre><h3>
-Tiger:
-Tigers are obligatory carnivore with prey including (hoofed animals) weighing over 20 kg like deer species (Sambar,Chital),wild boar,gaur,and water buffalo.
-Sleep time for tiger is 16-20 hours a day
-Lion:
-Lions are obligatory carnovore with prey including smaller animals (hares, birds) or carrion if necessary.
-Sleep time for lion is 15-20 hours a day
-Deer:
-Deers are specialized herbivore with diet including leaves, twigs, buds, herbs, fruits, fungi, and lichen.
-Sleep time for Deer is 4-5 hours a day
+Radius = 4
+Area = 50.24
+Circumference = 25.12
 </h3></pre>
 </section>
-<a href="../virtualfunctions.html">Back to Topic</a>
+<a href="../oops.html">Back to Topic</a>
 </body>
 </html>

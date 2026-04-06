@@ -3,88 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual Functions</title>
+    <title>OOPS</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-<h2>Write a C++ program to create an abstract class Shape with abstract methods calculateArea() and calculatePerimeter(). Create derived classes Circle and Triangle that extend the Shape class and implement the respective methods to calculate the area and perimeter of each shape.</h2>
+    <section>
+<h2>Write a C++ program to create a class called "dog" with a name and breed attribute. Create two instances of the "Dog" class, set their attributes using the constructor and modify the attributes using the setter methods and print the updated values.</h2>
 <pre><h3>
-#include &lt;iostream&gt;
-#include &lt;math.h&gt;
+#include&lt;iostream&gt;
 using namespace std;
 
-class shape
+class Dog
 {
-protected:
-    virtual double calculateArea() = 0;
-    virtual double calculatePerimeter() = 0;
-};
-
-class circle : public shape
-{
-private:
-    double rad;
-
 public:
-    circle(double radius)
+    string name;
+    string breed;
+
+    // constructor
+    Dog(string n, string b)
     {
-        rad = radius;
+        name = n;
+        breed = b;
     }
 
-    double calculateArea()
-    {
-        return (M_PI * rad * rad);
-    }
-    double calculatePerimeter()
-    {
-        return (M_PI * 2 * rad);
-    }
-};
-class triangle : public shape
-{
-private:
-    double s1, s2, s3;
 
-public:
-    triangle(double side1, double side2, double side3)
+    void setName(string n)
     {
-        s1 = side1;
-        s2 = side2;
-        s3 = side3;
+        name = n;
     }
 
-    double calculateArea()
+    void setBreed(string b)
     {
-        double sum = ((s1 + s2 + s3) / 2);
-        return (sqrt(sum * (sum - s1) * (sum - s2) * (sum - s3)));
+        breed = b;
     }
-    double calculatePerimeter()
+
+
+    void display()
     {
-        return (s1 + s2 + s3);
+        cout &lt;&lt; &quot;Name: &quot; &lt;&lt; name &lt;&lt; endl;
+        cout &lt;&lt; &quot;Breed: &quot; &lt;&lt; breed &lt;&lt; endl;
     }
 };
 
 int main()
 {
-    circle c1(10);
-    triangle t1(10, 10, 10);
+    Dog d1(&quot;Tommy&quot;, &quot;Labrador&quot;);
+    Dog d2(&quot;Rocky&quot;, &quot;Pug&quot;);
 
-    cout &lt;&lt; &quot;Area of triangle: &quot; &lt;&lt; t1.calculateArea() &lt;&lt; endl;
-    cout &lt;&lt; &quot;Perimeter of triangle: &quot; &lt;&lt; t1.calculatePerimeter();
-    cout &lt;&lt; endl;
-    cout &lt;&lt; &quot;Area of Circle: &quot; &lt;&lt; c1.calculateArea() &lt;&lt; endl;
-    cout &lt;&lt; &quot;Perimeter of circle: &quot; &lt;&lt; c1.calculatePerimeter();
+    d1.setName(&quot;Bruno&quot;);     
+    d2.setBreed(&quot;Bulldog&quot;);  
+
+    d1.display();
+    d2.display();
+
     return 0;
 }
 </h3></pre>
 <h2>Output</h2>
 <pre><h3>
-Area of triangle:43.3013
-Perimeter of triangle:30
-Area of circle:314.159
-Perimeter of circle:62.8319
+Name: Bruno
+Breed: Labrador
+Name: Rocky
+Breed: Bulldog
 </h3></pre>
 </section>
-<a href="../virtualfunctions.html">Back to Topic</a>
+<a href="../oops.html">Back to Topic</a>
 </body>
 </html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOPS</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Write a C++ program to create a class called Circle with a private instance variable radius. Provide public getter and setter methods to access and modify the radius variable. However, provide two methods called calculateArea() and calculatePerimeter() that return the calculated area and perimeter based on the current radius value.</h2>
+<pre><h3>
+#include &lt;iostream&gt;
+using namespace std;
+
+class Circle {
+private:
+    int radius;  
+
+public:
+    // Setter method
+    void setRadius(int r) {
+        radius = r;
+    }
+
+    // Getter method
+    int getRadius() {
+        return radius;
+    }
+
+    float Area() {
+        return 3.14 * radius * radius; // Area = πr²
+    }
+
+    float Perimeter() {
+        return 2 * 3.14 * radius; // Perimeter = 2πr
+    }
+};
+
+int main() {
+    Circle c;
+    int r;
+    cout &lt;&lt; &quot;Enter radius: &quot;;
+    cin &gt;&gt; r;
+    c.setRadius(r);
+    cout &lt;&lt; &quot;\nCircle Details:\n&quot;;
+    cout &lt;&lt; &quot;Radius: &quot; &lt;&lt; c.getRadius() &lt;&lt; endl;
+    cout &lt;&lt; &quot;Area: &quot; &lt;&lt; c.Area() &lt;&lt; endl;
+    cout &lt;&lt; &quot;Perimeter: &quot; &lt;&lt; c.Perimeter() &lt;&lt; endl;
+
+    return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter radius: 34
+
+Circle Details:
+Radius: 34
+Area: 3629.84
+Perimeter: 213.52
+</h3></pre>
+</section>
+<a href="../oops.html">Back to Topic</a>
+</body>
+</html>

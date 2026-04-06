@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOPS</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Write a C++ program to create a class called &quot;MusicLibrary&quot; with a collection of songs and methods to add and remove songs, and to play a random song.</h2>
+<pre><h3>
+#include&lt;iostream&gt;
+using namespace std;
+
+class MusicLibrary
+{
+public:
+    char song1[20];
+    char song2[20];
+
+    void addSongs()  // input songs
+    {
+        cout&lt;&lt;&quot;Enter first song: &quot;;
+        cin&gt;&gt;song1;
+        cout&lt;&lt;&quot;Enter second song: &quot;;
+        cin&gt;&gt;song2;
+    }
+
+    void removeSong2()  // remove second song
+    {
+        song2[0] = &#x27;\0&#x27;;
+    }
+
+    void playRandom()  // pick any one song
+    {
+        if(song2[0] != &#x27;\0&#x27;)
+            cout&lt;&lt;&quot;Playing: &quot;&lt;&lt;song1&lt;&lt;endl;  // pick first song
+        else
+            cout&lt;&lt;&quot;Playing: &quot;&lt;&lt;song1&lt;&lt;endl;  // only first song available
+    }
+
+    void display()  // show songs
+    {
+        cout&lt;&lt;&quot;Songs:\n&quot;&lt;&lt;song1&lt;&lt;&quot; &quot;&lt;&lt;song2&lt;&lt;endl;
+    }
+};
+
+int main()
+{
+    MusicLibrary m;
+
+    m.addSongs();
+
+    cout&lt;&lt;&quot;\nBefore removing:\n&quot;;
+    m.display();
+
+    m.removeSong2();
+
+    cout&lt;&lt;&quot;\nAfter removing:\n&quot;;
+    m.display();
+
+    cout&lt;&lt;&quot;Random song: &quot;;
+    m.playRandom();
+
+    return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter first song: break
+Enter second song: shape
+Before removing:
+Songs:
+break shape
+After removing:
+Songs:
+break 
+Random song: Playing: break
+</h3></pre>
+</section>
+<a href="../oops.html">Back to Topic</a>
+</body>
+</html>

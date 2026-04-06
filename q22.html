@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOPS</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Create a class showing an example of copy constructor.</h2>
+<pre><h3>
+#include &lt;iostream&gt;
+using namespace std;
+
+class Student {
+private:
+    int age;
+
+public:
+    // Constructor
+    Student(int a) {
+        age = a;
+    }
+    // Copy Constructor
+    Student(const Student &amp;s) {
+        age = s.age;
+    }
+    void display() {
+        cout &lt;&lt; &quot;Age: &quot; &lt;&lt; age &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Student s1(20);     // Original object
+    Student s2 = s1;   // Copy constructor called
+
+    cout &lt;&lt; &quot;Original Student: &quot;;
+    s1.display();
+
+    cout &lt;&lt; &quot;Copied Student: &quot;;
+    s2.display();
+
+    return 0;
+}</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Original Student: Age: 20
+Copied Student: Age: 20
+</h3></pre>
+</section>
+<a href="../oops.html">Back to Topic</a>
+</body>
+</html>

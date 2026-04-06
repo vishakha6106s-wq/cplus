@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOPS</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Write a C++ program to create a class called Employee with private instance variables employee_id, employee_name, and employee_salary. Provide public getter and setter methods to access and modify the id and name variables, but provide a getter method for the salary variable that returns a formatted string.</h2>
+<pre><h3>
+#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+using namespace std;
+
+class Employee {
+private:
+    char id[20];
+    char name[50];
+    int salary;
+
+public:
+    // Setter methods
+    void setID(char i[]) {
+        strcpy(id, i);
+    }
+
+    void setName(char n[]) {
+        strcpy(name, n);
+    }
+
+    void setSalary(int s) {
+        salary = s;
+    }
+
+    // Getter methods
+    char* getID() {
+        return id;
+    }
+
+    char* getName() {
+        return name;
+    }
+
+    void getSalary() {   // prints formatted salary
+        cout &lt;&lt; &quot;Salary: $&quot; &lt;&lt; salary &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Employee e1;
+    char i[20], n[50];
+    int s;
+    cout &lt;&lt; &quot;Enter Employee ID: &quot;;
+    cin &gt;&gt; i;
+    e1.setID(i);
+
+    cout &lt;&lt; &quot;Enter Employee Name: &quot;;
+    cin &gt;&gt; n;
+    e1.setName(n);
+
+    cout &lt;&lt; &quot;Enter Employee Salary: &quot;;
+    cin &gt;&gt; s;
+    e1.setSalary(s);
+
+    cout &lt;&lt; &quot;\nEmployee Details:&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;ID: &quot; &lt;&lt; e1.getID() &lt;&lt; endl;
+    cout &lt;&lt; &quot;Name: &quot; &lt;&lt; e1.getName() &lt;&lt; endl;
+    e1.getSalary();
+
+    return 0;
+}</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter Employee ID: 1002
+Enter Employee Name: komal
+Enter Employee Salary: 300000
+
+Employee Details:
+ID: 1002
+Name: komal
+Salary: $300000
+</h3></pre>
+</section>
+<a href="../oops.html">Back to Topic</a>
+</body>
+</html>

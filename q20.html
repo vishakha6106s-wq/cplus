@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOPS</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Create a class showing an example of default constructor.</h2>
+<pre><h3>
+#include &lt;iostream&gt;
+using namespace std;
+
+class Student {
+public:
+    int age;
+
+    // Default constructor
+    Student() {
+        age = 18; // default value
+    }
+};
+
+int main() {
+    Student s;  // default constructor called automatically
+    cout&lt;&lt;&quot;Age: &quot;&lt;&lt;s.age;
+    return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Age: 18
+</h3></pre>
+</section>
+<a href="../oops.html">Back to Topic</a>
+</body>
+</html>

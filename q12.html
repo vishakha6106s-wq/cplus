@@ -3,69 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual Functions</title>
+    <title>OOPS</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-<h2>Write a C++ program to create an abstract class Bird with abstract methods fly() and makeSound(). Create derived classes Eagle and Hawk that extend the Bird class and implement the respective methods to describe how each bird flies and makes a sound.</h2>
+    <section>
+<h2>Write a C++ program to create a class called &quot;Airplane&quot; with a flight number, destination, and departure time attributes, and methods to check flight status and delay.</h2>
 <pre><h3>
-#include &lt;iostream&gt;
-#include &lt;string.h&gt;
+#include&lt;iostream&gt;
 using namespace std;
 
-class bird
-{
-protected:
-    virtual void makesound() = 0;
-    virtual void fly() = 0;
-};
-class eagle : public bird
+class Airplane
 {
 public:
-    void makesound()
+    char flightNo[20];
+    char destination[20];
+    int time;
+
+    void checkStatus()
     {
-        cout &lt;&lt; &quot;Eagle is soaring in the sky.&quot; &lt;&lt; endl;
+        cout&lt;&lt;&quot;Flight is On Time&quot;&lt;&lt;endl;
     }
-    void fly()
+
+    void delay()
     {
-        cout &lt;&lt; &quot;Eagle makes a sharp cry.&quot; &lt;&lt; endl;
+        time = time + 1;   // delay by 1 hour
     }
-};
-class hawk : public bird
-{
-public:
-    void makesound()
+
+    void display()
     {
-        cout &lt;&lt; &quot;Hawk is flying high.&quot; &lt;&lt; endl;
-    }
-    void fly()
-    {
-        cout &lt;&lt; &quot;Hawk screeches.&quot; &lt;&lt; endl;
+        cout&lt;&lt;&quot;Flight No: &quot;&lt;&lt;flightNo&lt;&lt;endl;
+        cout&lt;&lt;&quot;Destination: &quot;&lt;&lt;destination&lt;&lt;endl;
+        cout&lt;&lt;&quot;Time: &quot;&lt;&lt;time&lt;&lt;endl;
     }
 };
 
 int main()
 {
-    eagle e1;
-    hawk h1;
+    Airplane a;
 
-    e1.fly();
-    h1.fly();
-    cout &lt;&lt; endl;
-    e1.makesound();
-    h1.makesound();
+    // input
+    cout&lt;&lt;&quot;Enter flight no:&quot;;
+    cin&gt;&gt;a.flightNo;
+    cout&lt;&lt;&quot;Enter the destination:&quot;;
+    cin&gt;&gt;a.destination;
+    cout&lt;&lt;&quot;Enter the time:&quot;;
+    cin&gt;&gt;a.time;
+
+    // show status
+    a.checkStatus();
+
+    a.delay();
+
+    cout&lt;&lt;&quot;\nAfter delay:\n&quot;;
+    a.display();
 
     return 0;
 }
+
 </h3></pre>
 <h2>Output</h2>
 <pre><h3>
-Eagle makes a sharp cry.
-Hawk screeches.
+Enter flight no:AY22
+Enter the destination:delhi
+Enter the time:4
+Flight is On Time
 
-Eagle is soaring in the sky.
-Hawk is flying high.
+After delay:
+Flight No: AY22
+Destination: delhi
+Time: 5
 </h3></pre>
-<a href="../virtualfunctions.html">Back to Topic</a>
+</section>
+<a href="../oops.html">Back to Topic</a>
 </body>
 </html>

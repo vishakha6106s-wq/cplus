@@ -3,68 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual Functions</title>
+    <title>OOPS</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-<h2>Write a C++ program to create an abstract class Vehicle with abstract methods startEngine() and stopEngine(). Create derived classes Car and Motorcycle that extend the Vehicle class and implement the respective methods to start and stop the engines for each vehicle type.</h2>
+    <section>
+<h2>Write a C++ program to create a class called &quot;Bank&quot; with a collection of accounts and methods to add and remove accounts, and to deposit and withdraw money. Also define a class called &quot;Account&quot; to maintain account details of a particular customer.</h2>
 <pre><h3>
-#include &lt;iostream&gt;
-#include &lt;string.h&gt;
+#include&lt;iostream&gt;
 using namespace std;
 
-class vehicle
-{
-protected:
-    virtual void startEngine() = 0;
-    virtual void stopEngine() = 0;
-};
-class car : public vehicle
+class Account
 {
 public:
-    void startEngine()
-    {
-        cout &lt;&lt; &quot;Car Engine Started&quot; &lt;&lt; endl;
-    }
-    void stopEngine()
-    {
-        cout &lt;&lt; &quot;Car Engine Stopped&quot; &lt;&lt; endl;
-    }
+    char name[20];
+    int accNo;
+    int balance;
 };
-class motorcycle : public vehicle
+
+class Bank
 {
 public:
-    void startEngine()
-    {
-        cout &lt;&lt; &quot;MotorCycle Engine Started&quot; &lt;&lt; endl;
-    }
-    void stopEngine()
-    {
-        cout &lt;&lt; &quot;Motorcycle Engine Stopped&quot; &lt;&lt; endl;
-    }
+    Account a1, a2;   // only 2 accounts
 };
 
 int main()
 {
-    car c1;
-    motorcycle m1;
+    Bank b;
 
-    c1.startEngine();
-    c1.stopEngine();
-    m1.startEngine();
-    m1.stopEngine();
+    // input
+    cout&lt;&lt;&quot;Enter first account name: &quot;;
+    cin&gt;&gt;b.a1.name;
+    cout&lt;&lt;&quot;Enter first acc Number and Balance:&quot;;
+    cin&gt;&gt;b.a1.accNo&gt;&gt;b.a1.balance;
 
+    cout&lt;&lt;&quot;Enter second account Nmae: &quot;;
+    cin&gt;&gt;b.a2.name;
+     cout&lt;&lt;&quot;Enter second acc Number and Balance:&quot;;
+     cin&gt;&gt;b.a2.accNo&gt;&gt;b.a2.balance;
+
+    // deposit (add money)
+    b.a1.balance = b.a1.balance + 1000;
+
+    // withdraw (remove money)
+    b.a2.balance = b.a2.balance - 500;
+
+    // display
+    cout&lt;&lt;&quot;\nAfter changes:\n&quot;;
+    cout&lt;&lt;b.a1.name&lt;&lt;&quot; &quot;&lt;&lt;b.a1.accNo&lt;&lt;&quot; &quot;&lt;&lt;b.a1.balance&lt;&lt;endl;
+    cout&lt;&lt;b.a2.name&lt;&lt;&quot; &quot;&lt;&lt;b.a2.accNo&lt;&lt;&quot; &quot;&lt;&lt;b.a2.balance&lt;&lt;endl;
     return 0;
 }
 </h3></pre>
 <h2>Output</h2>
 <pre><h3>
-Car Engine Started
- Car Engine Stopped
- MotorCycle Engine Started
- Motorcycle Engine Stopped
-</h3></pre>
+Enter first account name: ram
+Enter first acc Number and Balance: 233 2000
+Enter second account Nmae: sham
+Enter second acc Number and Balance:155 40000
 
-<a href="../virtualfunctions.html">Back to Topic</a>
+After changes:
+ram 233 3000
+sham 155 39500
+</h3></pre>
+</section>
+<a href="../oops.html">Back to Topic</a>
 </body>
 </html>

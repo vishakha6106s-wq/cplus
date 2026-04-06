@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOPS</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Create a class entering the rollno, name and class of the student from user but rollno should be automatically generated as we enter the information of 10 students</h2>
+<pre><h3>
+#include &lt;iostream&gt;
+using namespace std;
+
+class Student {
+private:
+    int rollNo;
+    string name;
+    string studentClass;
+    static int count; // Automatic roll numbers
+
+public:
+    Student() {
+        count++;
+        rollNo = count;
+
+        cout &lt;&lt; &quot;Entering details of Student &quot; &lt;&lt; rollNo &lt;&lt; &quot;:\n&quot;;
+
+        cout &lt;&lt; &quot;Enter Name: &quot;;
+        cin &gt;&gt; name;
+
+        cout &lt;&lt; &quot;Enter Class: &quot;;
+        cin &gt;&gt; studentClass;
+    }
+    void display() 
+    {
+        cout &lt;&lt; &quot;Roll No: &quot; &lt;&lt; rollNo &lt;&lt; &quot;, Name: &quot; &lt;&lt; name &lt;&lt; &quot;, Class: &quot; &lt;&lt; studentClass &lt;&lt; endl;
+    }
+};
+
+int Student::count = 0;
+
+int main() {
+    Student s[10]; // 10 students
+    cout &lt;&lt; &quot;\nStudent Details:\n&quot;;
+    for (int i = 0; i &lt; 10; i++) {
+        s[i].display(); // Display each student details separately
+    }
+
+    return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Entering details for Student 1:
+Enter Name: neha 
+Enter Class: bba
+Entering details for Student 2:
+Enter Name: kiran
+Enter Class: bca
+Entering details for Student 3:
+Enter Name: sam
+Enter Class: bca
+Student Details:
+Roll No: 1, Name: neha, Class: bba
+Roll No: 2, Name: kiran, Class: bca
+Roll No: 3, Name: sam, Class: bca
+
+</h3></pre>
+</section>
+<a href="../oops.html">Back to Topic</a>
+</body>
+</html>

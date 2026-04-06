@@ -3,106 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual Functions</title>
+    <title>OOPS</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-<h2>Write a C++ program to create an abstract class BankAccount with abstract methods deposit() and withdraw(). Create derived classes: SavingsAccount and CurrentAccount that extend the BankAccount class and implement the respective methods to handle deposits and withdrawals for each account type.</h2>
+    <section>
+<h2>Write a C++ program to create a class called &quot;Rectangle&quot; with width and height attributes. Calculate the area and perimeter of the rectangle.</h2>
 <pre><h3>
-#include &lt;iostream&gt;
+#include&lt;iostream&gt;
 using namespace std;
 
-class bankAccount
-{
-protected:
-    int balance;
-    virtual void deposit() = 0;
-    virtual void withdraw() = 0;
-};
-
-class savingsAccount : public bankAccount
+class Rectangle
 {
 public:
-    void deposit()
+    int width, height;
+
+    Rectangle(int w, int h)
     {
-        int amt;
-        cout &lt;&lt; &quot;Enter the amount you would like to withdraw: &quot;;
-        cin &gt;&gt; amt;
-        bankAccount::balance += amt;
-        cout &lt;&lt; &quot;Amount Deposited!&quot; &lt;&lt; endl;
-        cout &lt;&lt; &quot;New Balance: &quot; &lt;&lt; bankAccount::balance;
+        width = w;
+        height = h;
     }
-    void withdraw()
+
+    int area()
     {
-        int amt;
-        cout &lt;&lt; &quot;Enter the amount you would like to withdraw: &quot;;
-        cin &gt;&gt; amt;
-        if (amt &gt;= (bankAccount::balance - 500))
-        {
-            bankAccount::balance -= amt;
-            cout &lt;&lt; &quot;Collect your Cash&quot; &lt;&lt; endl;
-            cout &lt;&lt; &quot;New Balance: &quot; &lt;&lt; bankAccount::balance;
-        }
-        else
-        {
-            cout &lt;&lt; &quot;Insufficient Balance&quot; &lt;&lt; endl;
-            cout &lt;&lt; &quot;Minimum balance in account should be 500&quot;;
-        }
+        return width * height;
+    }
+
+    int perimeter()
+    {
+        return 2 * (width + height);
     }
 };
 
-class savingsAccount : public bankAccount
-{
-    int overdraft;
-
-public:
-    void deposit()
-    {
-        int amt;
-        cout &lt;&lt; &quot;Enter the amount you would like to withdraw: &quot;;
-        cin &gt;&gt; amt;
-        bankAccount::balance += amt;
-        cout &lt;&lt; &quot;Amount Deposited!&quot; &lt;&lt; endl;
-        cout &lt;&lt; &quot;New Balance: &quot; &lt;&lt; bankAccount::balance;
-    }
-    void withdraw()
-    {
-        int amt;
-        cout &lt;&lt; &quot;Enter the amount you would like to withdraw: &quot;;
-        cin &gt;&gt; amt;
-        bankAccount::balance -= amt;
-        cout &lt;&lt; &quot;Collect your Cash&quot; &lt;&lt; endl;
-        if (bankAccount::balance &gt;= 0)
-        {
-            cout &lt;&lt; &quot;New Balance: &quot; &lt;&lt; bankAccount::balance;
-        }
-        else
-        {
-            overdraft = bankAccount::balance;
-            cout &lt;&lt; &quot;Overdraft generated!&quot; &lt;&lt; endl;
-            cout &lt;&lt; &quot;Overdraft Amount: &quot; &lt;&lt; overdraft &lt;&lt; &quot; (Overdrafft Charges may apply, please deposit the overdraft amount to avoid charges)&quot;;
-        }
-    }
-};
 int main()
 {
-    savingsAccount s;
-    s.deposit()&lt;&lt;endl;
-    s.withdraw();
+    int w, h;
+
+    cout &lt;&lt; &quot;Enter width and height: &quot;;
+    cin &gt;&gt; w &gt;&gt; h;
+
+    Rectangle r(w, h);
+
+    cout &lt;&lt; &quot;Area = &quot; &lt;&lt; r.area() &lt;&lt; endl;
+    cout &lt;&lt; &quot;Perimeter = &quot; &lt;&lt; r.perimeter();
+
     return 0;
 }
 </h3></pre>
 <h2>Output</h2>
 <pre><h3>
-Enter the amount you would like to withdraw&quot; 500
-Amount Deposited!
-New Balance:1500
-Enter the amount you would like to withdraw: 2000
-Collect your Cash
-Overdraft generated!
-Overdraft Amount:500(Overdraft Charges may apply,please deposit the overdraft amount to avoid charges)
+Enter width and height: 23 12
+Area = 276
+Perimeter = 70
 </h3></pre>
 </section>
-<a href="../virtualfunctions.html">Back to Topic</a>
+<a href="../oops.html">Back to Topic</a>
 </body>
 </html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOPS</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Write a C++ program to create a class called &quot;School&quot; with attributes for students, teachers, and classes, and methods to add and remove students and teachers, and to create classes.</h2>
+<pre><h3>
+#include&lt;iostream&gt;
+using namespace std;
+
+class School
+{
+public:
+    char student[20];
+    char teacher[20];
+    char classname[20];
+};
+
+int main()
+{
+    School s;
+
+    // add (input)
+    cout&lt;&lt;&quot;Enter student name: &quot;;
+    cin&gt;&gt;s.student;
+
+    cout&lt;&lt;&quot;Enter teacher name: &quot;;
+    cin&gt;&gt;s.teacher;
+
+    cout&lt;&lt;&quot;Enter class name: &quot;;
+    cin&gt;&gt;s.classname;
+
+    // display
+    cout&lt;&lt;&quot;\nSchool Data:\n&quot;;
+    cout&lt;&lt;s.student&lt;&lt;endl;
+    cout&lt;&lt;s.teacher&lt;&lt;endl;
+    cout&lt;&lt;s.classname&lt;&lt;endl;
+
+    // remove student and teacher
+    s.student[0] = &#x27;\0&#x27;;
+    s.teacher[0] = &#x27;\0&#x27;;
+
+    cout&lt;&lt;&quot;After removing:\n&quot;;
+    cout&lt;&lt;s.student&lt;&lt;endl;
+    cout&lt;&lt;s.teacher&lt;&lt;endl;
+    cout&lt;&lt;s.classname&lt;&lt;endl;
+
+    return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter student name: Neha
+Enter teacher name: Kiran
+Enter class name: bca
+School Data:
+Neha
+Kiran
+bca
+After removing:
+bca
+</h3></pre>
+</section>
+<a href="../oops.html">Back to Topic</a>
+</body>
+</html>

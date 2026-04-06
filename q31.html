@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOPS</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Write a C++ program to create a class called Student with private instance variables student_id, student_name, and grades. Provide public getter and setter methods to access and modify the student_id and student_name variables. However, provide a method called addGrade() that allows adding a grade to the grades variable while performing additional validation.</h2>
+<pre><h3>
+#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+using namespace std;
+
+class Student {
+private:
+    char id[20];
+    char name[50];
+    int grades[10];   // up to 10 grades
+    int count;        // number of grades added
+
+public:
+    // Constructor
+    Student() {
+        count = 0;
+    }
+
+    // Setter methods
+    void setID(char i[]) {
+        strcpy(id, i);
+    }
+
+    void setName(char n[]) {
+        strcpy(name, n);
+    }
+
+    // Getter methods
+    char* getID() {
+        return id;
+    }
+
+    char* getName() {
+        return name;
+    }
+
+    // Method to add grade with validation
+    void addGrade(int g) {
+        if(g &gt;= 0 &amp;&amp; g &lt;= 100) {
+            if(count &lt; 10) {
+                grades[count] = g;
+                count++;
+                cout &lt;&lt; &quot;Grade added successfully.&quot; &lt;&lt; endl;
+            } else {
+                cout &lt;&lt; &quot;Cannot add more grades.&quot; &lt;&lt; endl;
+            }
+        } else {
+            cout &lt;&lt; &quot;Invalid grade! Enter 0 to 100.&quot; &lt;&lt; endl;
+        }
+    }
+
+    // Method to show all grades
+    void showGrades() {
+        cout &lt;&lt; &quot;Grades: &quot;;
+        for(int i = 0; i &lt; count; i++) {
+            cout &lt;&lt; grades[i] &lt;&lt; &quot; &quot;;
+        }
+        cout &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Student s1;
+    char i[20], n[50];
+    int g;
+
+    cout &lt;&lt; &quot;Enter Student ID: &quot;;
+    cin &gt;&gt; i;
+    s1.setID(i);
+
+    cout &lt;&lt; &quot;Enter Student Name: &quot;;
+    cin &gt;&gt; n;
+    s1.setName(n);
+
+    // Add grades example
+    for(int j = 0; j &lt; 3; j++) {
+        cout &lt;&lt; &quot;Enter grade &quot; &lt;&lt; j+1 &lt;&lt; &quot;: &quot;;
+        cin &gt;&gt; g;
+        s1.addGrade(g);
+    }
+
+    cout &lt;&lt; &quot;\nStudent Details:&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;ID: &quot; &lt;&lt; s1.getID() &lt;&lt; endl;
+    cout &lt;&lt; &quot;Name: &quot; &lt;&lt; s1.getName() &lt;&lt; endl;
+    s1.showGrades();
+
+    return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter Student ID: 1001
+Enter Student Name: Neha
+Enter grade 1: 89
+Grade added successfully.
+Enter grade 2: 50
+Grade added successfully.
+Enter grade 3: 70
+Grade added successfully.
+Student Details:
+ID: 1001
+Name: Neha
+Grades: 89 50 70
+</h3></pre>
+</section>
+<a href="../oops.html">Back to Topic</a>
+</body>
+</html>

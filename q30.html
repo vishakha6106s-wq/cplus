@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOPS</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Write a C++ program to create a class called Car with private instance variables company_name, model_name, year, and mileage. Provide public getter and setter methods to access and modify the company_name, model_name, and year variables. However, only provide a getter method for the mileage variable.</h2>
+<pre><h3>
+#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+using namespace std;
+
+class Car
+{
+private:
+    char company[50];
+    char model[50];
+    int year;
+    int mileage;
+
+public:
+    // Setter methods
+    void setCompany(char c[])
+    {
+        strcpy(company, c);
+    }
+    void setModel(char m[]) 
+    {
+         strcpy(model, m); 
+    }
+    void setYear(int y)
+    {
+         year = y; 
+    }
+    void setMileage(int m) { 
+        mileage = m; 
+    } 
+
+    // Getter methods
+    char *getCompany() { 
+        return company; 
+    }
+    char *getModel() { 
+        return model;
+     }
+    int getYear() {
+         return year;
+         }
+    int getMileage() {
+         return mileage; 
+        } 
+};
+
+int main()
+{
+    Car c1;
+    char str[50];
+    int y, m;
+
+    cout &lt;&lt; &quot;Enter Company Name: &quot;;
+    cin &gt;&gt; str;
+    c1.setCompany(str);
+
+    cout &lt;&lt; &quot;Enter Model Name: &quot;;
+    cin &gt;&gt; str;
+    c1.setModel(str);
+
+    cout &lt;&lt; &quot;Enter Year: &quot;;
+    cin &gt;&gt; y;
+    c1.setYear(y);
+
+    cout &lt;&lt; &quot;Enter Mileage: &quot;;
+    cin &gt;&gt; m;
+    c1.setMileage(m);
+
+    cout &lt;&lt; &quot;\nCar Details:\n&quot;;
+    cout &lt;&lt; &quot;Company: &quot; &lt;&lt; c1.getCompany() &lt;&lt; endl;
+    cout &lt;&lt; &quot;Model: &quot; &lt;&lt; c1.getModel() &lt;&lt; endl;
+    cout &lt;&lt; &quot;Year: &quot; &lt;&lt; c1.getYear() &lt;&lt; endl;
+    cout &lt;&lt; &quot;Mileage: &quot; &lt;&lt; c1.getMileage() &lt;&lt; &quot; km/l&quot; &lt;&lt; endl;
+
+    return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter Company Name: tata
+Enter Model Name: corolla
+Enter Year: 2010
+Enter Mileage: 18
+Car Details:
+Company: tata
+Model: corolla
+Year: 2010
+Mileage: 18 km/l
+</h3></pre>
+</section>
+<a href="../oops.html">Back to Topic</a>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOPS</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Write a C++ program to create a class called &quot;Shape&quot; with abstract methods for calculating area and perimeter, and subclasses for &quot;Rectangle&quot;, &quot;Circle&quot;, and &quot;Triangle&quot;.</h2>
+<pre><h3>
+#include &lt;iostream&gt;
+using namespace std;
+
+// Abstract class
+class Shape {
+public:
+    virtual void area() = 0;        // pure virtual function
+    virtual void perimeter() = 0;   // pure virtual function
+};
+
+// Rectangle class
+class Rectangle : public Shape {
+    float length, width;
+public:
+    Rectangle(float l, float w) {
+        length = l;
+        width = w;
+    }
+
+    void area() {
+        cout &lt;&lt; &quot;Rectangle Area = &quot; &lt;&lt; length * width &lt;&lt; endl;
+    }
+
+    void perimeter() {
+        cout &lt;&lt; &quot;Rectangle Perimeter = &quot; &lt;&lt; 2 * (length + width) &lt;&lt; endl;
+    }
+};
+
+// Circle class
+class Circle : public Shape {
+    float radius;
+public:
+    Circle(float r) {
+        radius = r;
+    }
+
+    void area() {
+        cout &lt;&lt; &quot;Circle Area = &quot; &lt;&lt; 3.14 * radius * radius &lt;&lt; endl;
+    }
+
+    void perimeter() {
+        cout &lt;&lt; &quot;Circle Perimeter = &quot; &lt;&lt; 2 * 3.14 * radius &lt;&lt; endl;
+    }
+};
+
+// Triangle class
+class Triangle : public Shape {
+    float a, b, c;
+public:
+    Triangle(float x, float y, float z) {
+        a = x; b = y; c = z;
+    }
+
+    void area() {
+        float s = (a + b + c) / 2;  // semi-perimeter
+        float ar = sqrt(s * (s - a) * (s - b) * (s - c));
+        cout &lt;&lt; &quot;Triangle Area = &quot; &lt;&lt; ar &lt;&lt; endl;
+    }
+
+    void perimeter() {
+        cout &lt;&lt; &quot;Triangle Perimeter = &quot; &lt;&lt; a + b + c &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Rectangle r(5, 3);
+    Circle c(4);
+    Triangle t(3, 4, 5);
+
+    r.area();
+    r.perimeter();
+
+    c.area();
+    c.perimeter();
+
+    t.area();
+    t.perimeter();
+
+    return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Rectangle Area = 15
+Rectangle Perimeter = 16
+Circle Area = 50.24
+Circle Perimeter = 25.12
+Triangle Area = 6
+Triangle Perimeter = 12
+</h3></pre>
+</section>
+<a href="../oops.html">Back to Topic</a>
+</body>
+</html>

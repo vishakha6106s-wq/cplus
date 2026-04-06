@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOPS</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Write a C++ program to create a class called &quot;Restaurant&quot; with attributes for menu items, prices, and ratings, and methods to add and remove items, and to calculate average rating.</h2>
+<pre><h3>
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Restaurant {
+public:
+    string items[5];   // max 5 items
+    float prices[5];
+    float ratings[5];
+    int count;         // current number of items
+
+    Restaurant() {
+        count = 0;
+    }
+
+    void addItem(string name, float price, float rating) {
+        if(count &lt; 5) {
+            items[count] = name;
+            prices[count] = price;
+            ratings[count] = rating;
+            count++;
+        } else {
+            cout &lt;&lt; &quot;Menu full!\n&quot;;
+        }
+    }
+
+    void removeItem(string name) {
+        bool found = false;
+        for(int i=0; i&lt;count; i++) {
+            if(items[i] == name) {
+                for(int j=i; j&lt;count-1; j++) {
+                    items[j] = items[j+1];
+                    prices[j] = prices[j+1];
+                    ratings[j] = ratings[j+1];
+                }
+                count--;
+                found = true;
+                cout &lt;&lt; name &lt;&lt; &quot; removed from menu.\n&quot;;
+                break;
+            }
+        }
+        if(!found) cout &lt;&lt; name &lt;&lt; &quot; not found in menu.\n&quot;;
+    }
+
+    void showMenu() {
+        cout &lt;&lt; &quot;Menu:\n&quot;;
+        for(int i=0; i&lt;count; i++) {
+            cout &lt;&lt; items[i] &lt;&lt; &quot; - Rs.&quot; &lt;&lt; prices[i] &lt;&lt; &quot; - Rating: &quot; &lt;&lt; ratings[i] &lt;&lt; endl;
+        }
+    }
+
+    void averageRating() {
+        if(count == 0) {
+            cout &lt;&lt; &quot;No items in menu.\n&quot;;
+            return;
+        }
+        float sum = 0;
+        for(int i=0; i&lt;count; i++) sum += ratings[i];
+        cout &lt;&lt; &quot;Average rating = &quot; &lt;&lt; sum/count &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Restaurant r;
+
+    // Add items
+    r.addItem(&quot;Burger&quot;, 120, 4.5);
+    r.addItem(&quot;Pizza&quot;, 250, 4.8);
+    r.addItem(&quot;Pasta&quot;, 180, 4.2);
+
+    // Show menu and average rating
+    r.showMenu();
+    r.averageRating();
+
+    // Remove an item
+    r.removeItem(&quot;Pizza&quot;);
+    r.showMenu();
+    r.averageRating();
+
+    return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Menu:
+Burger - Rs.120 - Rating: 4.5
+Pizza - Rs.250 - Rating: 4.8
+Pasta - Rs.180 - Rating: 4.2
+Average rating = 4.5
+Pizza removed from menu.
+Menu:
+Burger - Rs.120 - Rating: 4.5
+Pasta - Rs.180 - Rating: 4.2
+Average rating = 4.35
+</h3></pre>
+</section>
+<a href="../oops.html">Back to Topic</a>
+</body>
+</html>

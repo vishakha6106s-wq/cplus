@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOPS</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Create a class showing an example of parameterized constructor.</h2>
+<pre><h3>
+#include &lt;iostream&gt;
+using namespace std;
+
+class Student {
+public:
+    int age;
+    Student(int a) {
+        age = a;  
+    }
+
+    void show() {
+        cout &lt;&lt; &quot;Age: &quot; &lt;&lt; age &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Student s1(20);  // passing 20 to constructor
+    Student s2(25);  // passing 25 to constructor
+
+    s1.show();
+    s2.show();
+    return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Age: 20
+Age: 25
+</h3></pre>
+</section>
+<a href="../oops.html">Back to Topic</a>
+</body>
+</html>

@@ -3,89 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual Functions</title>
+    <title>OOPS</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-
-<h2>Write a C++ program to create an abstract class GeometricShape with abstract methods area() and perimeter(). Create derived classes Triangle and Square that extend the GeometricShape class and implement the respective methods to calculate the area and perimeter of each shape</h2>
+    <section>
+<h2>Write a C++ program to create a class called &quot;Library&quot; with a collection of books and methods to add and remove books.</h2>
 <pre><h3>
-#include &lt;iostream&gt;
-#include &lt;math.h&gt;
+#include&lt;iostream&gt;
 using namespace std;
 
-class geometricshape
+class Book
 {
-protected:
-    virtual double area() = 0;
-    virtual double perimeter() = 0;
+public:
+    char name[20];
 };
 
-class square : public geometricshape
+class Library
 {
-private:
-    double side;
-
 public:
-    square(double s)
-    {
-        side = s;
-    }
-
-    double area()
-    {
-        return (side * side);
-    }
-    double perimeter()
-    {
-        return (4.0 * side);
-    }
-};
-class triangle : public geometricshape
-{
-private:
-    double s1, s2, s3;
-
-public:
-    triangle(double side1, double side2, double side3)
-    {
-        s1 = side1;
-        s2 = side2;
-        s3 = side3;
-    }
-
-    double area()
-    {
-        double sum = ((s1 + s2 + s3) / 2);
-        return (sqrt(sum * (sum - s1) * (sum - s2) * (sum - s3)));
-    }
-    double perimeter()
-    {
-        return (s1 + s2 + s3);
-    }
+    Book b1, b2;   // 2 books
 };
 
 int main()
 {
-    square s1(10);
-    triangle t1(10, 10, 10);
+    Library l;
 
-    cout &lt;&lt; &quot;Area of triangle: &quot; &lt;&lt; t1.area() &lt;&lt; endl;
-    cout &lt;&lt; &quot;Perimeter of triangle: &quot; &lt;&lt; t1.perimeter();
-    cout &lt;&lt; endl;
-    cout &lt;&lt; &quot;Area of Square: &quot; &lt;&lt; s1.area() &lt;&lt; endl;
-    cout &lt;&lt; &quot;Perimeter of Square: &quot; &lt;&lt; s1.perimeter();
+    // input books
+    cout&lt;&lt;&quot;Enter first book name: &quot;;
+    cin&gt;&gt;l.b1.name;
+
+    cout&lt;&lt;&quot;Enter second book name: &quot;;
+    cin&gt;&gt;l.b2.name;
+
+    // display before removing
+    cout&lt;&lt;&quot;\nBooks:\n&quot;;
+    cout&lt;&lt;l.b1.name&lt;&lt;endl;
+    cout&lt;&lt;l.b2.name&lt;&lt;endl;
+
+    // remove second book
+    l.b2.name[0] = &#x27;\0&#x27;;
+
+    // display after removing
+    cout&lt;&lt;&quot;\nAfter removing:\n&quot;;
+    cout&lt;&lt;l.b1.name&lt;&lt;endl;
+    cout&lt;&lt;l.b2.name&lt;&lt;endl;
 
     return 0;
 }
+
 </h3></pre>
 <h2>Output</h2>
 <pre><h3>
-Area of triangle: 43.3013
-Perimeter of triangle:30
-Area of Square: 100
-Perimeter of Square: 40
+Enter first book name: java
+Enter second book name: cpp
+Books:
+java
+cpp
+After removing:
+java
 </h3></pre>
-<a href="../virtualfunctions.html">Back to Topic</a>
+</section>
+<a href="../oops.html">Back to Topic</a>
 </body>
 </html>

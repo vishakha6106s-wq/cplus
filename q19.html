@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOPS</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Write a C++ program to create a class with methods to search for flights and hotels, and to book and cancel reservations.</h2>
+<pre><h3>
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Reservation {
+public:
+    string flight[5];
+    string hotel[5];
+    bool flightBooked[5];
+    bool hotelBooked[5];
+    int flightCount;
+    int hotelCount;
+
+    Reservation() {
+        flightCount = 0;
+        hotelCount = 0;
+        for(int i=0;i&lt;5;i++) { flightBooked[i]=false; hotelBooked[i]=false; }
+    }
+
+    void addFlight(string name) {
+        if(flightCount&lt;5) flight[flightCount++] = name;
+    }
+
+    void addHotel(string name) {
+        if(hotelCount&lt;5) hotel[hotelCount++] = name;
+    }
+
+    void searchFlights(string name) {
+        bool found=false;
+        for(int i=0;i&lt;flightCount;i++) {
+            if(flight[i]==name) { cout&lt;&lt;&quot;Flight found: &quot;&lt;&lt;name&lt;&lt;endl; found=true; break; }
+        }
+        if(!found) cout&lt;&lt;&quot;Flight not found\n&quot;;
+    }
+
+    void searchHotels(string name) {
+        bool found=false;
+        for(int i=0;i&lt;hotelCount;i++) {
+            if(hotel[i]==name) { cout&lt;&lt;&quot;Hotel found: &quot;&lt;&lt;name&lt;&lt;endl; found=true; break; }
+        }
+        if(!found) cout&lt;&lt;&quot;Hotel not found\n&quot;;
+    }
+
+    void bookFlight(string name) {
+        for(int i=0;i&lt;flightCount;i++) {
+            if(flight[i]==name &amp;&amp; !flightBooked[i]) {
+                flightBooked[i]=true;
+                cout&lt;&lt;&quot;Flight booked: &quot;&lt;&lt;name&lt;&lt;endl;
+                return;
+            }
+        }
+        cout&lt;&lt;&quot;Flight not available or already booked\n&quot;;
+    }
+
+    void bookHotel(string name) {
+        for(int i=0;i&lt;hotelCount;i++) {
+            if(hotel[i]==name &amp;&amp; !hotelBooked[i]) {
+                hotelBooked[i]=true;
+                cout&lt;&lt;&quot;Hotel booked: &quot;&lt;&lt;name&lt;&lt;endl;
+                return;
+            }
+        }
+        cout&lt;&lt;&quot;Hotel not available or already booked\n&quot;;
+    }
+
+    void cancelFlight(string name) {
+        for(int i=0;i&lt;flightCount;i++) {
+            if(flight[i]==name &amp;&amp; flightBooked[i]) {
+                flightBooked[i]=false;
+                cout&lt;&lt;&quot;Flight cancelled: &quot;&lt;&lt;name&lt;&lt;endl;
+                return;
+            }
+        }
+        cout&lt;&lt;&quot;Flight not booked or not found\n&quot;;
+    }
+
+    void cancelHotel(string name) {
+        for(int i=0;i&lt;hotelCount;i++) {
+            if(hotel[i]==name &amp;&amp; hotelBooked[i]) {
+                hotelBooked[i]=false;
+                cout&lt;&lt;&quot;Hotel cancelled: &quot;&lt;&lt;name&lt;&lt;endl;
+                return;
+            }
+        }
+        cout&lt;&lt;&quot;Hotel not booked or not found\n&quot;;
+    }
+};
+
+int main() {
+    Reservation r;
+
+    // Add some flights and hotels
+    r.addFlight(&quot;Flight101&quot;);
+    r.addFlight(&quot;Flight202&quot;);
+    r.addHotel(&quot;HotelA&quot;);
+    r.addHotel(&quot;HotelB&quot;);
+
+    // Test
+    r.searchFlights(&quot;Flight101&quot;);
+    r.bookFlight(&quot;Flight101&quot;);
+    r.bookFlight(&quot;Flight101&quot;); // already booked
+    r.cancelFlight(&quot;Flight101&quot;);
+
+    r.searchHotels(&quot;HotelA&quot;);
+    r.bookHotel(&quot;HotelA&quot;);
+    r.cancelHotel(&quot;HotelA&quot;);
+
+    return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Flight found: Flight101
+Flight booked: Flight101
+Flight not available or already booked
+Flight cancelled: Flight101
+Hotel found: HotelA
+Hotel booked: HotelA
+Hotel cancelled: HotelA
+</h3></pre>
+</section>
+<a href="../oops.html">Back to Topic</a>
+</body>
+</html>

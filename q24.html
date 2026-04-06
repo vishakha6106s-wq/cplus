@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOPS</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Create a class showing the area of circle and rectangle by method overloading.</h2>
+<pre><h3>
+#include &lt;iostream&gt;
+using namespace std;
+
+class Shape {
+public:
+    void area(float radius) {
+        cout &lt;&lt; &quot;Area of Circle: &quot; &lt;&lt; 3.14 * radius * radius &lt;&lt; endl;
+    }
+
+    void area(float length, float width) {
+        cout &lt;&lt; &quot;Area of Rectangle: &quot; &lt;&lt; length * width &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Shape s;
+    float r, l, w;
+    cout &lt;&lt; &quot;Enter radius of circle: &quot;;
+    cin &gt;&gt; r;
+    s.area(r);
+
+    cout &lt;&lt; &quot;Enter length of rectangle: &quot;;
+    cin &gt;&gt; l ;
+    cout&lt;&lt;&quot;Enter width: &quot;;
+    cin&gt;&gt; w;
+    s.area(l, w);
+    return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter radius of circle: 34.55
+Area of Circle: 3748.23
+Enter length of rectangle: 23
+Enter width: 46.7
+Area of Rectangle: 1074.1
+</h3></pre>
+</section>
+<a href="../oops.html">Back to Topic</a>
+</body>
+</html>

@@ -3,55 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual Functions</title>
+    <title>OOPS</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-
-<h2>Write a C++ program to create an abstract class Animal with an abstract method called sound(). Create derived classes Lion and Tiger that extend the Animal class and implement the sound() method to make a specific sound for each animal.</h2>
+    <section>
+<h2>Write a C++ program to create a class called "Person" with a name and age attribute. Create two instances of the &quot;Person&quot; class, set their attributes using the constructor, and print their name and age.</h2>
 <pre><h3>
-#include &lt;iostream&gt;
-#include &lt;string.h&gt;
+#include&lt;iostream&gt;
 using namespace std;
 
-class animal
-{
-protected:
-    virtual void sound() = 0;
-};
-class tiger : public animal
+class Person
 {
 public:
-    void sound()
+    string name;
+    int age;
+
+    Person(string n, int a)
     {
-        cout &lt;&lt; &quot;Tiger roars.&quot; &lt;&lt; endl;
-    }
-};
-class lion : public animal
-{
-public:
-    void sound()
-    {
-        cout &lt;&lt; &quot;Lion roars loudly.&quot; &lt;&lt; endl;
+        name = n;
+        age = a;
     }
 };
 
 int main()
 {
-    tiger t1;
-    lion l1;
+    Person p1(&quot;Samiksha&quot;, 18);
+    Person p2(&quot;Riya&quot;, 20);
 
-    t1.sound();
-    cout &lt;&lt; endl;
-    l1.sound();
+    cout &lt;&lt; &quot;Name: &quot; &lt;&lt; p1.name &lt;&lt; endl;
+    cout &lt;&lt; &quot;Age: &quot; &lt;&lt; p1.age &lt;&lt; endl;
+
+    cout &lt;&lt; &quot;Name: &quot; &lt;&lt; p2.name &lt;&lt; endl;
+    cout &lt;&lt; &quot;Age: &quot; &lt;&lt; p2.age &lt;&lt; endl;
+
     return 0;
-}
+} 
 </h3></pre>
 <h2>Output</h2>
 <pre><h3>
-Tiger roars
-Lion roars loudly
+Name: Samiksha
+Age: 18
+
+Name: Riya
+Age: 20
 </h3></pre>
-<a href="../virtualfunctions.html">Back to Topic</a>
+</section>
+<a href="../oops.html">Back to Topic</a>
 </body>
 </html>

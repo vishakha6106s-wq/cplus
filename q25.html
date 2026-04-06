@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOPS</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Write a C++ program to create a class called Person with private instance variables name, age. and country. Provide public getter and setter methods to access and modify these variables.</h2>
+<pre><h3>
+#include &lt;iostream&gt;
+#include &lt;cstring&gt; // For strcpy
+using namespace std;
+
+class Person {
+private:
+    char name[50];
+    int age;
+    char country[50];
+
+public:
+    // Setter methods
+    void setName(char n[]) {
+        strcpy(name, n);
+    }
+
+    void setAge(int a) {
+        age = a;
+    }
+
+    void setCountry(char c[]) {
+        strcpy(country, c);
+    }
+
+    // Getter methods
+    char* getName() {
+        return name;
+    }
+
+    int getAge() {
+        return age;
+    }
+
+    char* getCountry() {
+        return country;
+    }
+};
+
+int main() {
+    Person p;
+    char n[50], c[50];
+    int a;
+    cout &lt;&lt; &quot;Enter name: &quot;;
+    cin &gt;&gt; n;
+    p.setName(n);
+    cout &lt;&lt; &quot;Enter age: &quot;;
+    cin &gt;&gt; a;
+    p.setAge(a);
+    cout &lt;&lt; &quot;Enter country: &quot;;
+    cin &gt;&gt; c;
+    p.setCountry(c);
+    cout &lt;&lt; &quot;\nPerson Details:\n&quot;;
+    cout &lt;&lt; &quot;Name: &quot; &lt;&lt; p.getName() &lt;&lt; endl;
+    cout &lt;&lt; &quot;Age: &quot; &lt;&lt; p.getAge() &lt;&lt; endl;
+    cout &lt;&lt; &quot;Country: &quot; &lt;&lt; p.getCountry() &lt;&lt; endl;
+    return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter name: Neha
+Enter age: 12
+Enter country: India
+Person Details:
+Name: Neha
+Age: 12
+Country: India
+</h3></pre>
+</section>
+<a href="../oops.html">Back to Topic</a>
+</body>
+</html>

@@ -3,85 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual Functions</title>
+    <title>OOPS</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-<h2>Write a C++ program to create an abstract class Employee with abstract methods calculateSalary() and displayInfo(). Create derived classes Manager and Programmer that extend the Employee class and implement the respective methods to calculate salary and display information for each role.</h2>
+    <section>
+<h2>Write a C++ program to create a class called &quot;Book&quot; with attributes for title, author, and ISBN, and methods to add and remove books from a collection.</h2>
 <pre><h3>
-#include &lt;iostream&gt;
+#include&lt;iostream&gt;
 using namespace std;
-
-class Employee
+class Book
 {
-protected:
-    int basicSalary, fixedCTC, allowance, HRA;
-    virtual float calculateSalary() = 0;
-    virtual void displayInfo() = 0;
-};
-
-class Programmer : public Employee
-{
-
 public:
-    void displayInfo()
+    string title, author, isbn;
+
+    void addBook(string t, string a, string i)
     {
-        cout &lt;&lt; &quot; A full-stack developer with 3–5 years of experience, responsible for writing code, debugging, and maintaining software modules.&quot;;
+        title = t;
+        author = a;
+        isbn = i;
     }
 
-    int calculatesalary()
+    void removeBook()
     {
-        Employee::basicSalary = 800000;
-        Employee::fixedCTC = 320000;
-        Employee::allowance = 30000;
-        Employee::HRA = 1420000;
-
-        return (Employee::basicSalary + Employee::fixedCTC + Employee::allowance + Employee::HRA);
-    }
-};
-class Manager : public Employee
-{
-
-public:
-    void displayInfo()
-    {
-        cout &lt;&lt; &quot; A full-stack developer with 3–5 years of experience, responsible for writing code, debugging, and maintaining software modules.&quot;;
+        title = &quot;&quot;;
+        author = &quot;&quot;;
+        isbn = &quot;&quot;;
     }
 
-    int calculatesalary()
+    void display()
     {
-        Employee::basicSalary = 1800000;
-        Employee::fixedCTC = 720000;
-        Employee::allowance = 600000;
-        Employee::HRA = 3120000;
-
-        return (Employee::basicSalary + Employee::fixedCTC + Employee::allowance + Employee::HRA);
+        cout &lt;&lt; &quot;Title: &quot; &lt;&lt; title &lt;&lt; endl;
+        cout &lt;&lt; &quot;Author: &quot; &lt;&lt; author &lt;&lt; endl;
+        cout &lt;&lt; &quot;ISBN: &quot; &lt;&lt; isbn &lt;&lt; endl;
     }
 };
+
 int main()
 {
-    Programmer p;
-    Manager m;
-    cout&lt;&lt;&quot;Programmer Info:&quot;&lt;&lt;endl;
-    p.displayInfo();
-    cout&lt;&lt;&quot;Salary:&quot;&lt;&lt;p.calculateSalary()&lt;&lt;endl;
-    cout&lt;&lt;endl;
-    cout&lt;&lt;&quot;Manager Info:&quot;&lt;&lt;endl;
-    m.displayInfo();
-    cout&lt;&lt;&quot;Salary:&quot;&lt;&lt;m.calculateSalary()&lt;&lt;endl;
+    Book b;
+
+    b.addBook(&quot;C++ Basics&quot;, &quot;Ravi&quot;, &quot;12345&quot;);  // add book
+    b.display();
+
+    b.removeBook();  // remove book
+
+    cout &lt;&lt; &quot;\nAfter removing:\n&quot;;
+    b.display();
+
     return 0;
 }
 </h3></pre>
 <h2>Output</h2>
 <pre><h3>
-Programmer Info:
-A full-stack developer with 3–5 years of experience, responsible for writing code, debugging, and maintaining software modules.
-Salary:2570000
-Manager Info:
-A full-stack developer with 3–5 years of experience, responsible for writing code, debugging, and maintaining software modules.
-Salary:5700000
+Title: C++ Basics
+Author: Ravi
+ISBN: 12345
+
+After removing:
+Title: 
+Author: 
+ISBN:
 </h3></pre>
 </section>
-<a href="../virtualfunctions.html">Back to Topic</a>
+<a href="../oops.html">Back to Topic</a>
 </body>
 </html>

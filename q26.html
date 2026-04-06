@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOPS</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Write a C++ program to create a class called BankAccount with private instance variables accountNumber and balance. Provide public getter and setter methods to access and modify these variables.</h2>
+<pre><h3>
+#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+using namespace std;
+
+class BankAccount {
+private:
+    char accountNumber[20]; // Account number as char array
+    int balance;            // Balance as integer
+
+public:
+    // Setter methods
+    void setAccountNumber(char acc[]) {
+        strcpy(accountNumber, acc);
+    }
+
+    void setBalance(int b) {
+        balance = b;
+    }
+
+    // Getter methods
+    char* getAccountNumber() {
+        return accountNumber;
+    }
+
+    int getBalance() {
+        return balance;
+    }
+};
+
+int main() {
+    BankAccount b;
+    char acc[20];
+    int bal;
+
+    cout &lt;&lt; &quot;Enter account number: &quot;;
+    cin &gt;&gt; acc;
+    b.setAccountNumber(acc);
+
+    cout &lt;&lt; &quot;Enter balance: &quot;;
+    cin &gt;&gt; bal;
+    b.setBalance(bal);
+
+    cout &lt;&lt; &quot;\nBank Account Details:\n&quot;;
+    cout &lt;&lt; &quot;Account Number: &quot; &lt;&lt; b.getAccountNumber() &lt;&lt; endl;
+    cout &lt;&lt; &quot;Balance: &quot; &lt;&lt; b.getBalance() &lt;&lt; endl;
+
+    return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter account number: 12345
+Enter balance: 5000
+Bank Account Details:
+Account Number: 12345
+Balance: 5000
+</h3></pre>
+</section>
+<a href="../oops.html">Back to Topic</a>
+</body>
+</html>

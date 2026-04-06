@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOPS</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Write a C++ program to create a class called &quot;Movie&quot; with attributes for title, director, actors, and reviews, and methods for adding and retrieving reviews.</h2>
+<pre><h3>
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Movie {
+public:
+    string title;
+    string director;
+    string actors[5]; // max 5 actors
+    string reviews[5]; // max 5 reviews
+    int reviewCount;
+
+    Movie() {
+        reviewCount = 0; // start with 0 reviews
+    }
+
+    void addReview(string r) {
+        if (reviewCount &lt; 5) {
+            reviews[reviewCount] = r;
+            reviewCount++;
+        } else {
+            cout &lt;&lt; &quot;Review limit reached\n&quot;;
+        }
+    }
+
+    void showReviews() {
+        cout &lt;&lt; &quot;Reviews for &quot; &lt;&lt; title &lt;&lt; &quot;:\n&quot;;
+        for (int i = 0; i &lt; reviewCount; i++) {
+            cout &lt;&lt; i+1 &lt;&lt; &quot;. &quot; &lt;&lt; reviews[i] &lt;&lt; endl;
+        }
+    }
+};
+
+int main() {
+    Movie m;
+
+    // Input movie details
+    cout &lt;&lt; &quot;Enter movie title: &quot;;
+    getline(cin, m.title);
+    cout &lt;&lt; &quot;Enter director: &quot;;
+    getline(cin, m.director);
+
+    cout &lt;&lt; &quot;Enter 3 actors:\n&quot;;
+    for(int i=0; i&lt;3; i++) {
+        cout &lt;&lt; &quot;Actor &quot; &lt;&lt; i+1 &lt;&lt; &quot;: &quot;;
+        getline(cin, m.actors[i]);
+    }
+
+    // Add reviews
+    m.addReview(&quot;Amazing movie!&quot;);
+    m.addReview(&quot;Good acting and story.&quot;);
+
+    // Display reviews
+    cout &lt;&lt; &quot;\nMovie: &quot; &lt;&lt; m.title &lt;&lt; endl;
+    cout &lt;&lt; &quot;Director: &quot; &lt;&lt; m.director &lt;&lt; endl;
+    cout &lt;&lt; &quot;Actors: &quot;;
+    for(int i=0; i&lt;3; i++) cout &lt;&lt; m.actors[i] &lt;&lt; &quot; &quot;;
+    cout &lt;&lt; &quot;\n&quot;;
+    m.showReviews();
+
+    return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter movie title: people life
+Enter director: krish
+Enter 3 actors:
+Actor 1: rock
+Actor 2: arjun
+Actor 3: shivam
+Movie: people life
+Director: krish
+Actors: rock arjun shivam 
+Reviews for people life:
+1. Amazing movie!
+2. Good acting and story.
+</h3></pre>
+</section>
+<a href="../oops.html">Back to Topic</a>
+</body>
+</html>

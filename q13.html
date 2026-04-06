@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOPS</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section>
+<h2>Write a C++ program to create a class called &quot;Inventory&quot; with a collection of products and methods to add and remove products, and to check for low inventory.</h2>
+<pre><h3>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    char name1[20], name2[20];
+    int q1, q2;
+
+    // input
+    cout&lt;&lt;&quot;Enter product1 name: &quot;;
+    cin&gt;&gt;name1;
+    cout&lt;&lt;&quot;Enter product1 quantity: &quot;;
+    cin&gt;&gt;q1;
+
+    cout&lt;&lt;&quot;Enter product2 name: &quot;;
+    cin&gt;&gt;name2;
+    cout&lt;&lt;&quot;Enter product2 quantity: &quot;;
+    cin&gt;&gt;q2;
+
+    // check low stock
+    if(q1 &lt; 5)
+        cout&lt;&lt;name1&lt;&lt;&quot; in low stock&quot;&lt;&lt;endl;
+
+    if(q2 &lt; 5)
+        cout&lt;&lt;name2&lt;&lt;&quot;in low stock&quot;&lt;&lt;endl;
+
+    // remove second product
+    q2 = 0;
+
+    // display
+    cout&lt;&lt;&quot;\nProducts:\n&quot;;
+    cout&lt;&lt;name1&lt;&lt;&quot; &quot;&lt;&lt;q1&lt;&lt;endl;
+    cout&lt;&lt;name2&lt;&lt;&quot; &quot;&lt;&lt;q2&lt;&lt;endl;
+
+    return 0;
+}
+</h3></pre>
+<h2>Output</h2>
+<pre><h3>
+Enter product1 name: bottle
+Enter product1 quantity: 72
+Enter product2 name: pen
+Enter product2 quantity: 4
+pen in low stock
+Products:
+bottle 72
+pen 0
+</h3></pre>
+</section>
+<a href="../oops.html">Back to Topic</a>
+</body>
+</html>
